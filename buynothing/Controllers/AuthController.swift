@@ -15,12 +15,12 @@ class AuthController: UIViewController {
     super.viewDidLoad()
     
     if (FBSDKAccessToken.current() != nil) {
-        print("Access token success")
+      print("Access token success")
+      performSegue(withIdentifier: "TabBarController", sender: nil)
     } else {
-        let facebookLoginButton = FBSDKLoginButton()
-        facebookLoginButton.center = self.view.center
-        view.addSubview(facebookLoginButton)
+      let facebookLoginButton = FBSDKLoginButton()
+      facebookLoginButton.center = self.view.center
+      view.addSubview(facebookLoginButton)
     }
   }
 }
-

@@ -20,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     BuddyBuildSDK.setup()
     
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-    
-    
     return true
   }
   
@@ -30,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ = FBSDKApplicationDelegate.sharedInstance().application(app, open: url,
                                                               sourceApplication: sourceApplication,
                                                               annotation: "")
-    
     return true
   }
   
