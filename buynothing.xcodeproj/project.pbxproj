@@ -131,7 +131,6 @@
 				1B3A97381E9BDC5B0053866B /* Controllers */,
 				1B3A97391E9BDC6B0053866B /* Extensions */,
 				1B3A97051E9BDC3A0053866B /* AppDelegate.swift */,
-				1B3A97071E9BDC3A0053866B /* ViewController.swift */,
 				1B3A97091E9BDC3A0053866B /* Main.storyboard */,
 				1B3A970F1E9BDC3A0053866B /* Assets.xcassets */,
 				1B3A97111E9BDC3A0053866B /* LaunchScreen.storyboard */,
@@ -176,6 +175,7 @@
 		1B3A97381E9BDC5B0053866B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B3A97071E9BDC3A0053866B /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -745,6 +745,7 @@
 				1B3A972F1E9BDC3B0053866B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B3A97301E9BDC3B0053866B /* Build configuration list for PBXNativeTarget "buynothingTests" */ = {
 			isa = XCConfigurationList;
@@ -753,6 +754,7 @@
 				1B3A97321E9BDC3B0053866B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B3A97331E9BDC3B0053866B /* Build configuration list for PBXNativeTarget "buynothingUITests" */ = {
 			isa = XCConfigurationList;
@@ -761,6 +763,7 @@
 				1B3A97351E9BDC3B0053866B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
