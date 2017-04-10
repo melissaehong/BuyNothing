@@ -1,18 +1,19 @@
-#source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+#source "https://github.com/CocoaPods/Specs.git"
+platform :ios, "10.0"
 
-target 'buynothing' do
+target "buynothing" do
   use_frameworks!
-  pod 'Alamofire', '~> 4.4'
+  
+  pod "Alamofire", "~> 4.4"
   pod "FBSDKCoreKit"
   pod "FBSDKLoginKit"
   pod "FBSDKShareKit"
   
-  target 'buynothingTests' do
+  target "buynothingTests" do
     inherit! :search_paths
   end
 
-  target 'buynothingUITests' do
+  target "buynothingUITests" do
     inherit! :search_paths
   end
 end

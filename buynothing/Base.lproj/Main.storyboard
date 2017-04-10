@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="2368.8000000000002" y="-383.65817091454278"/>
         </scene>
-        <!--Listing Detailed View Controller-->
+        <!--Listing Detail View Controller-->
         <scene sceneID="Q63-ed-ecT">
             <objects>
-                <viewController id="iSk-LH-rcl" customClass="ListingDetailedViewController" customModule="buynothing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iSk-LH-rcl" userLabel="Listing Detail View Controller" customClass="ListingDetailViewController" customModule="buynothing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sQx-E1-deL"/>
                         <viewControllerLayoutGuide type="bottom" id="j5s-Li-8fX"/>
