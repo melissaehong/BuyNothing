@@ -14,9 +14,13 @@ class AuthController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let facebookLoginButton = FBSDKLoginButton()
-    facebookLoginButton.center = self.view.center
-    view.addSubview(facebookLoginButton)
+    if (FBSDKAccessToken.current() != nil) {
+        print("Access token success")
+    } else {
+        let facebookLoginButton = FBSDKLoginButton()
+        facebookLoginButton.center = self.view.center
+        view.addSubview(facebookLoginButton)
+    }
   }
 }
 
