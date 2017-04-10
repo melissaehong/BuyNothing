@@ -21,7 +21,46 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharing.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ohz-Y7-eO3">
+                                <rect key="frame" x="-125" y="0.0" width="629" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" fixedFrame="YES" image="BuyNothingLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Ej-4I-Rhc">
+                                <rect key="frame" x="298" y="135" width="41" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nothing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWb-63-Ld0">
+                                <rect key="frame" x="145" y="135" width="145" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="0Oi-l7-ppm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZc-MG-8Wm">
+                                <rect key="frame" x="71" y="135" width="66" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Bwu-KK-6Sp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bWb-63-Ld0" firstAttribute="leading" secondItem="IZc-MG-8Wm" secondAttribute="trailing" constant="8" id="42l-tZ-1Fl"/>
+                            <constraint firstItem="bWb-63-Ld0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="RJd-lP-wpC"/>
+                            <constraint firstItem="ohz-Y7-eO3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="e8u-xh-yDc"/>
+                            <constraint firstItem="bWb-63-Ld0" firstAttribute="leading" secondItem="IZc-MG-8Wm" secondAttribute="trailing" constant="8" id="fQu-if-cpa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ohz-Y7-eO3" secondAttribute="bottom" id="fWZ-Vh-4Cw"/>
+                            <constraint firstItem="ohz-Y7-eO3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-125" id="jH5-58-bbH"/>
+                            <constraint firstItem="IZc-MG-8Wm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="mA3-cb-u4f"/>
+                            <constraint firstAttribute="trailing" secondItem="ohz-Y7-eO3" secondAttribute="trailing" constant="-129" id="v3w-DP-6Dl"/>
+                            <constraint firstItem="IZc-MG-8Wm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="x0S-uo-1hQ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="n0M-Mh-zQD" kind="show" identifier="TabBarController" id="t3l-nw-7LW"/>
@@ -29,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="36"/>
+            <point key="canvasLocation" x="-84" y="35.532233883058474"/>
         </scene>
         <!--Home-->
         <scene sceneID="W9x-rl-Kcv">
@@ -193,6 +232,8 @@
         <image name="add" width="25" height="25"/>
         <image name="house" width="23" height="25"/>
         <image name="profile" width="23" height="25"/>
+        <image name="BuyNothingLogo.png" width="150" height="269"/>
+        <image name="sharing.jpg" width="426" height="284"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
