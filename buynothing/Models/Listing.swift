@@ -7,18 +7,35 @@
 //
 
 import Foundation
+import CloudKit
 
 struct Listing {
   let user: User
   let createdAt: Date
   let duration: Int
   let descriptionText: String
-  
+
   init(user: User, descriptionText: String, createdAt: String, duration: Int) {
     self.user = user
     self.createdAt = Date.fromString(createdAt)!
     self.duration = duration
     self.descriptionText = descriptionText
+  }
+
+  /// Generate a CKRecord representation of listing to allow
+  /// persisting to CloudKit
+  func toRecord() throws -> CKRecord? {
+    let record = CKRecord(recordType: "Listings")
+
+    record["createdAt"] = createdAt as CKRecordValue
+    record["descriptionText"] = descriptionText as CKRecordValue
+    record["duration"] = duration as CKRecordValue
+
+    if let userRecord = user.toRecord() {
+      record["user"] = CKReference(record: userRecord, action: .none)
+    }
+
+    return record
   }
 }
 

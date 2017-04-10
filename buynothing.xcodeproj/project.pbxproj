@@ -16,6 +16,8 @@
 		1B3A97131E9BDC3A0053866B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A97111E9BDC3A0053866B /* LaunchScreen.storyboard */; };
 		1B3A971E1E9BDC3A0053866B /* buynothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A971D1E9BDC3A0053866B /* buynothingTests.swift */; };
 		1B3A97291E9BDC3B0053866B /* buynothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97281E9BDC3B0053866B /* buynothingUITests.swift */; };
+		1B920B4B1E9C397000079011 /* CloudKitFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B920B4A1E9C397000079011 /* CloudKitFacade.swift */; };
+		1B920B4F1E9C408600079011 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B920B4E1E9C408600079011 /* CloudKit.framework */; };
 		1BF46B971E9C1795007EDBA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */; };
 		1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B981E9C17C7007EDBA0 /* Listing.swift */; };
 		1BF46B9B1E9C1A02007EDBA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B9A1E9C1A02007EDBA0 /* User.swift */; };
@@ -68,6 +70,9 @@
 		1B3A97241E9BDC3A0053866B /* buynothingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buynothingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3A97281E9BDC3B0053866B /* buynothingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buynothingUITests.swift; sourceTree = "<group>"; };
 		1B3A972A1E9BDC3B0053866B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B920B4A1E9C397000079011 /* CloudKitFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitFacade.swift; path = Models/CloudKitFacade.swift; sourceTree = "<group>"; };
+		1B920B4D1E9C408400079011 /* buynothing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = buynothing.entitlements; sourceTree = "<group>"; };
+		1B920B4E1E9C408600079011 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		1BF46B981E9C17C7007EDBA0 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = Models/Listing.swift; sourceTree = "<group>"; };
 		1BF46B9A1E9C1A02007EDBA0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 				AA434AA8FD9F4C13E1C22F1C /* CoreTelephony.framework in Frameworks */,
 				DA6E6F3C0DC32DF3683A6203 /* SystemConfiguration.framework in Frameworks */,
 				FEA80EB8F01526FE3DA56725 /* QuartzCore.framework in Frameworks */,
+				1B920B4F1E9C408600079011 /* CloudKit.framework in Frameworks */,
 				A5C4F198B8934AEDB15C9CC0 /* AVFoundation.framework in Frameworks */,
 				DDAE599B0752F11E4637DD02 /* CoreMedia.framework in Frameworks */,
 				7CD9ACC4E77EAD078B93929F /* CoreVideo.framework in Frameworks */,
@@ -134,6 +140,7 @@
 		18138157E3D9A301C314BC0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B920B4E1E9C408600079011 /* CloudKit.framework */,
 				0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */,
 				6A679FC261586A32614D98DF /* Pods_buynothingTests.framework */,
 				E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */,
@@ -176,6 +183,7 @@
 		1B3A97041E9BDC3A0053866B /* buynothing */ = {
 			isa = PBXGroup;
 			children = (
+				1B920B4D1E9C408400079011 /* buynothing.entitlements */,
 				1B3A97361E9BDC500053866B /* Models */,
 				1B3A97371E9BDC560053866B /* Views */,
 				1B3A97381E9BDC5B0053866B /* Controllers */,
@@ -213,6 +221,7 @@
 			children = (
 				1BF46B981E9C17C7007EDBA0 /* Listing.swift */,
 				1BF46B9A1E9C1A02007EDBA0 /* User.swift */,
+				1B920B4A1E9C397000079011 /* CloudKitFacade.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,6 +344,14 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = M94KDK654M;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					1B3A97181E9BDC3A0053866B = {
 						CreatedOnToolsVersion = 8.3;
@@ -548,6 +565,7 @@
 				1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */,
 				1B3A970E1E9BDC3A0053866B /* buynothing.xcdatamodeld in Sources */,
 				1BF46B9F1E9C24B9007EDBA0 /* Date.swift in Sources */,
+				1B920B4B1E9C397000079011 /* CloudKitFacade.swift in Sources */,
 				1BF46B9B1E9C1A02007EDBA0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +721,7 @@
 			baseConfigurationReference = 76DA80DD93634AC1483F5A8E /* Pods-buynothing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = buynothing/buynothing.entitlements;
 				DEVELOPMENT_TEAM = M94KDK654M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -723,6 +742,7 @@
 			baseConfigurationReference = B4C787D5602A7C0B1D693883 /* Pods-buynothing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = buynothing/buynothing.entitlements;
 				DEVELOPMENT_TEAM = M94KDK654M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

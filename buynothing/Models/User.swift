@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import CloudKit
 
 struct User {
   let emailAddress: String
-  let facebookID: String
+  let id: Int
   let firstName: String
   let lastInitial: String
   var latitude: Float?
@@ -18,14 +19,22 @@ struct User {
 
   init?(json: [String: AnyObject]) {
     guard let emailAddress = json["email"] as? String,
-      let facebookID = json["id"] as? String,
+      let id = json["id"] as? Int,
       let firstName = json["first_name"] as? String,
       let lastInitial = json["last_name"] as? String
       else { return nil }
       
     self.emailAddress = emailAddress
-    self.facebookID = facebookID
+    self.id = id
     self.firstName = firstName
     self.lastInitial = lastInitial
+  }
+
+  /// Generate a CKRecord representation of user to allow
+  /// persisting to CloudKit
+  func toRecord() -> CKRecord? {
+    let record = CKRecord(recordType: "Users")
+    record["emailAddress"] = emailAddress as CKRecordValue
+    return record
   }
 }
