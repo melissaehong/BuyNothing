@@ -19,6 +19,7 @@
 		1B3A97291E9BDC3B0053866B /* buynothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97281E9BDC3B0053866B /* buynothingUITests.swift */; };
 		4EF6765EE350714EC472837E /* Pods_buynothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */; };
 		9B120CCD0B8DAFF10438F5FD /* Pods_buynothingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A679FC261586A32614D98DF /* Pods_buynothingTests.framework */; };
+		F21E25C81E9BFDC600648D96 /* ListingDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E25C71E9BFDC600648D96 /* ListingDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		BAC7D2B53665F7EDD23D1B04 /* Pods-buynothingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buynothingUITests/Pods-buynothingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D4A65535C56671D551B0055C /* Pods-buynothingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buynothingTests/Pods-buynothingTests.release.xcconfig"; sourceTree = "<group>"; };
 		E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21E25C71E9BFDC600648D96 /* ListingDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingDetailedViewController.swift; path = Controllers/ListingDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		1B3A97381E9BDC5B0053866B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F21E25C71E9BFDC600648D96 /* ListingDetailedViewController.swift */,
 				1B3A97071E9BDC3A0053866B /* AuthController.swift */,
 			);
 			name = Controllers;
@@ -487,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21E25C81E9BFDC600648D96 /* ListingDetailedViewController.swift in Sources */,
 				1B24B7CB1E9BE7F800A8A285 /* FacebookAPI.swift in Sources */,
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
 				1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */,
