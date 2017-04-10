@@ -16,12 +16,12 @@
 		1B3A97131E9BDC3A0053866B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A97111E9BDC3A0053866B /* LaunchScreen.storyboard */; };
 		1B3A971E1E9BDC3A0053866B /* buynothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A971D1E9BDC3A0053866B /* buynothingTests.swift */; };
 		1B3A97291E9BDC3B0053866B /* buynothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97281E9BDC3B0053866B /* buynothingUITests.swift */; };
-		4460A301C91956630A70B35A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F0A8B92DFEC7A8D447E2A9 /* BuddyBuildSDK.framework */; };
 		1BF46B971E9C1795007EDBA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */; };
 		1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B981E9C17C7007EDBA0 /* Listing.swift */; };
 		1BF46B9B1E9C1A02007EDBA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B9A1E9C1A02007EDBA0 /* User.swift */; };
 		1BF46B9D1E9C2382007EDBA0 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B9C1E9C2382007EDBA0 /* UIResponder.swift */; };
 		1BF46B9F1E9C24B9007EDBA0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B9E1E9C24B9007EDBA0 /* Date.swift */; };
+		4460A301C91956630A70B35A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F0A8B92DFEC7A8D447E2A9 /* BuddyBuildSDK.framework */; };
 		4EF6765EE350714EC472837E /* Pods_buynothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */; };
 		6FE22A21A338AD0B56E819AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C434B8CB8CCDA5C2B14CF076 /* CoreText.framework */; };
 		7CD9ACC4E77EAD078B93929F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9CB215E9B25505853B3ABF /* CoreVideo.framework */; };
@@ -68,13 +68,13 @@
 		1B3A97241E9BDC3A0053866B /* buynothingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buynothingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3A97281E9BDC3B0053866B /* buynothingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buynothingUITests.swift; sourceTree = "<group>"; };
 		1B3A972A1E9BDC3B0053866B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32234AE8F970A7E859E2466A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4BE9C6D90AAE5F0BEF7FF6FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		1BF46B981E9C17C7007EDBA0 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = Models/Listing.swift; sourceTree = "<group>"; };
 		1BF46B9A1E9C1A02007EDBA0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		1BF46B9C1E9C2382007EDBA0 /* UIResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIResponder.swift; path = Extensions/UIResponder.swift; sourceTree = "<group>"; };
 		1BF46B9E1E9C24B9007EDBA0 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Extensions/Date.swift; sourceTree = "<group>"; };
+		32234AE8F970A7E859E2466A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4BE9C6D90AAE5F0BEF7FF6FD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		633DBEB94F4A61DB8643DB77 /* Pods-buynothingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buynothingUITests/Pods-buynothingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		63F4B184BE24605466574CA2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		6A679FC261586A32614D98DF /* Pods_buynothingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +82,7 @@
 		76DA80DD93634AC1483F5A8E /* Pods-buynothing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buynothing/Pods-buynothing.debug.xcconfig"; sourceTree = "<group>"; };
 		7F9CB215E9B25505853B3ABF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		93A9C3009601617001BF5554 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A3F0A8B92DFEC7A8D447E2A9 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		A3F0A8B92DFEC7A8D447E2A9 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		A9B54CC93CA45536629EEB89 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B4C787D5602A7C0B1D693883 /* Pods-buynothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothing.release.xcconfig"; path = "Pods/Target Support Files/Pods-buynothing/Pods-buynothing.release.xcconfig"; sourceTree = "<group>"; };
 		B9B1C0941FFB6FF02E2AC682 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
