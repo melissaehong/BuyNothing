@@ -20,7 +20,7 @@ extension UIImage {
     /// Optionally cache it under CACHEKEY.
     static func fromURL(url urlString: String, cacheKey: String? = nil,
                         completion: @escaping ImageCompletion) {
-        
+
         Alamofire.request(urlString).responseImage { response in
             if let image = response.result.value {
                 completion(image)

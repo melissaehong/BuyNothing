@@ -16,11 +16,10 @@ struct Listing {
     let duration: Int
     var descriptionText: String
     var title: String
-  
+
     var latitude: Double?
     var longitude: Double?
     var createdAt: Date?
-
 
     static var testListing: Listing {
         var listing = Listing(user: User.testUser,
@@ -37,7 +36,7 @@ struct Listing {
     /// to the Completion handler on the main queue.
     static func listAll(completion: @escaping ListingCompletion) {
         CloudKitFacade.shared.getListings { (records) in
-            
+
             guard let records = records else { return }
             for record in records {
                 var listing = Listing(user: User.testUser,
@@ -55,7 +54,7 @@ struct Listing {
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
-        
+
         if let location = LocationManager.shared.getLocation() as? CLLocation {
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude

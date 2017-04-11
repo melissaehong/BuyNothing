@@ -11,11 +11,11 @@ import MapKit
 import CoreLocation
 
 class MapNibCell: UITableViewCell {
-    
+
     //setting up user location, pin and overlay
-    
+
     @IBOutlet weak var mapView: MKMapView!
-    
+
     var listing: Listing!
 
     override func awakeFromNib() {
@@ -24,26 +24,26 @@ class MapNibCell: UITableViewCell {
         self.mapView.delegate = self
 
     }
-    
+
     func getCoordinate() -> CLLocationCoordinate2D {
         let latitude = self.listing.latitude
         let longitude = self.listing.longitude
-        
+
         return CLLocationCoordinate2DMake(latitude!, longitude!)
     }
-    
+
     func writeLocationToMap() {
 
         let listingLocation = self.getCoordinate()
-        
+
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
-        
+
         let region: MKCoordinateRegion = MKCoordinateRegionMake(listingLocation, span)
-        
+
         mapView.setRegion(region, animated: true)
-        
+
         self.mapView.showsUserLocation = true
-        
+
 //        let annotation = MKPointAnnotation()
 //        annotation.coordinate = listingLocation
 //        annotation.title = "Listing location"
@@ -52,10 +52,9 @@ class MapNibCell: UITableViewCell {
          self.addRadiusCircle()
     }
 
-    
     //circle radius
     func addRadiusCircle() {
-        let circle = MKCircle(center: self.getCoordinate(), radius: 1000 as CLLocationDistance)
+        let circle = MKCircle(center: self.getCoordinate(), radius: 1_000 as CLLocationDistance)
         self.mapView.add(circle)
     }
 
@@ -64,7 +63,7 @@ class MapNibCell: UITableViewCell {
 // MARK: 
 
 extension MapNibCell: MKMapViewDelegate {
-    
+
     //draw circle radius
     func mapView(map: MKMapView!, renderForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is MKCircle {
@@ -77,15 +76,5 @@ extension MapNibCell: MKMapViewDelegate {
             return nil
         }
     }
-    
-    
+
 }
-
-
-
-
-
-
-
-
-

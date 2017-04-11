@@ -51,11 +51,11 @@ struct CloudKitFacade {
         let completeInMain = { (records: [CKRecord]?) in
             OperationQueue.main.addOperation { completion(records) }
         }
-        
+
         OperationQueue().addOperation {
             let predicate = NSPredicate(value: true)
             let query = CKQuery(recordType: "Listings", predicate: predicate)
-            
+
             self.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
                 if error != nil { return completeInMain(nil) }
                 guard let records = records else { return completeInMain(nil) }
