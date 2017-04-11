@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 import CoreLocation
 
-class LocationManager: NSObject, MKMapViewDelegate {
+class LocationManager: NSObject {
     
     let manager = CLLocationManager()
     

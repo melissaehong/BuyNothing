@@ -10,53 +10,59 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapNibCell: UITableViewCell, CLLocationManagerDelegate, MKMapViewDelegate{
+class MapNibCell: UITableViewCell {
     
     //setting up user location, pin and overlay
     
-    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
-    let manager = CLLocationManager()
-    
-    var locations: [CLLocation] = []
-    
+    var listing: Listing!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
-//        addRadiusCircle(userLocation: CLLocation)
+        self.mapView.delegate = self
         
     }
     
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func getCoordinate() -> CLLocationCoordinate2D {
+        let latitude = self.listing.latitude
+        let longitude = self.listing.longitude
         
-        let location = locations[0]
+        return CLLocationCoordinate2DMake(latitude!, longitude!)
+    }
+    
+    func writeLocationToMap() {
+
+        let listingLocation = self.getCoordinate()
         
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.02, 0.02)
-        let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region: MKCoordinateRegion = MKCoordinateRegionMake(userLocation, span)
-        map.setRegion(region, animated: true)
         
-        self.map.showsUserLocation = true
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(listingLocation, span)
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = userLocation
-        annotation.title = "Listing location"
-        map.addAnnotation(annotation)
+        mapView.setRegion(region, animated: true)
         
+        self.mapView.showsUserLocation = true
+        
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = listingLocation
+//        annotation.title = "Listing location"
+//        mapView.addAnnotation(annotation)
+
+         self.addRadiusCircle()
     }
+
     
     //circle radius
-    func addRadiusCircle(userLocation: CLLocation) {
-        self.map.delegate = self
-        let circle = MKCircle(center: userLocation.coordinate, radius: 1000 as CLLocationDistance)
-        self.map.add(circle)
+    func addRadiusCircle() {
+        let circle = MKCircle(center: self.getCoordinate(), radius: 1000 as CLLocationDistance)
+        self.mapView.add(circle)
     }
+
+}
+
+// MARK: 
+
+extension MapNibCell: MKMapViewDelegate {
     
     //draw circle radius
     func mapView(map: MKMapView!, renderForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
@@ -73,3 +79,12 @@ class MapNibCell: UITableViewCell, CLLocationManagerDelegate, MKMapViewDelegate{
     
     
 }
+
+
+
+
+
+
+
+
+
