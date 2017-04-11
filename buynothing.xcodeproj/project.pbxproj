@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B58C56C569980CFB7AA82D8 /* Pods_buynothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */; };
+		1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4141E9D31620054B4CE /* ListingCell.swift */; };
+		1B33E4171E9D31620054B4CE /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B33E4151E9D31620054B4CE /* ListingCell.xib */; };
+		1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */; };
 		1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97051E9BDC3A0053866B /* AppDelegate.swift */; };
 		1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97071E9BDC3A0053866B /* AuthController.swift */; };
 		1B3A970B1E9BDC3A0053866B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A97091E9BDC3A0053866B /* Main.storyboard */; };
@@ -58,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B33E4141E9D31620054B4CE /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Views/ListingCell.swift; sourceTree = "<group>"; };
+		1B33E4151E9D31620054B4CE /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListingCell.xib; path = Views/ListingCell.xib; sourceTree = "<group>"; };
+		1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedEdgeImageView.swift; path = Views/RoundedEdgeImageView.swift; sourceTree = "<group>"; };
 		1B3A97021E9BDC3A0053866B /* buynothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buynothing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3A97051E9BDC3A0053866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3A97071E9BDC3A0053866B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = Controllers/AuthController.swift; sourceTree = "<group>"; };
@@ -235,6 +241,9 @@
 		1B3A97371E9BDC560053866B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B33E4141E9D31620054B4CE /* ListingCell.swift */,
+				1B33E4151E9D31620054B4CE /* ListingCell.xib */,
+				1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -402,6 +411,7 @@
 			files = (
 				1B3A97131E9BDC3A0053866B /* LaunchScreen.storyboard in Resources */,
 				1B3A97101E9BDC3A0053866B /* Assets.xcassets in Resources */,
+				1B33E4171E9D31620054B4CE /* ListingCell.xib in Resources */,
 				1B3A970B1E9BDC3A0053866B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,8 +576,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BF46B971E9C1795007EDBA0 /* HomeViewController.swift in Sources */,
+				1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */,
 				F21E25C81E9BFDC600648D96 /* ListingDetailViewController.swift in Sources */,
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
+				1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */,
 				1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */,
 				1BF46B9D1E9C2382007EDBA0 /* UIResponder.swift in Sources */,
 				F21E25CA1E9C510400648D96 /* EditDetailsViewController.swift in Sources */,

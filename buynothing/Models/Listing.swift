@@ -20,10 +20,10 @@ struct Listing {
 
     static var testListing: Listing {
         var listing = Listing(user: User.testUser,
-                              descriptionText: "a listing",
+                              descriptionText: "Yo nobody in my hood got one.",
                               createdAt: "2017-01-01",
                               duration: 7,
-                              title: "This is a title")!
+                              title: "Datsun Z28")!
         listing.latitude = 47.606_209
         listing.longitude = -122.332_071
         return listing

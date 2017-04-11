@@ -13,7 +13,7 @@ import UIKit
 class ListingDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
 
-    let listing = Listing.testListing
+    var listing: Listing!
 
     override func viewDidLoad() {
         super.viewDidLoad()

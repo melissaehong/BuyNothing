@@ -23,6 +23,18 @@ class HomeViewController: UIViewController {
         self.searchBar.delegate = self
 
         allListings = [Listing.testListing]
+
+        let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
+        collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == ListingDetailViewController.reuseID,
+            let controller = segue.destination as? ListingDetailViewController,
+            let selectedListing = sender as? Listing {
+            controller.listing = selectedListing
+            return
+        }
     }
 }
 
@@ -37,12 +49,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListingCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListingCell.reuseID, for: indexPath) as! ListingCell
+        cell.listing = allListings[indexPath.row]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected \(indexPath.row)")
+        let selectedCell = allListings[indexPath.row]
+        performSegue(withIdentifier: ListingDetailViewController.reuseID, sender: selectedCell)
     }
 }
 
