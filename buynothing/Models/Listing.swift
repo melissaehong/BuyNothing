@@ -16,10 +16,11 @@ struct Listing {
     let duration: Int
     var descriptionText: String
     var title: String
-
+  
+    var latitude: Double?
+    var longitude: Double?
     var createdAt: Date?
-    var latitude: Float?
-    var longitude: Float?
+
 
     static var testListing: Listing {
         var listing = Listing(user: User.testUser,
@@ -54,6 +55,11 @@ struct Listing {
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
+        
+        if let location = LocationManager.shared.getLocation() as? CLLocation {
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
+        }
     }
 
     /// Generate a CKRecord representation of listing to allow
