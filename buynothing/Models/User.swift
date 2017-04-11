@@ -6,8 +6,8 @@
 //  Copyright © 2017 Jake Romer. All rights reserved.
 //
 
-import Foundation
 import CloudKit
+import Foundation
 
 struct User {
     let emailAddress: String
@@ -16,20 +16,28 @@ struct User {
     let lastInitial: String
     var latitude: Float?
     var longitude: Float?
-    
+
+    // TEMPORARY
+    static var testUser: User {
+        return User(json: ["email": "juner@gmail.com" as AnyObject,
+                           "id": 39_393 as AnyObject,
+                           "first_name": "June" as AnyObject,
+                           "last_name": "R" as AnyObject])!
+    }
+
     init?(json: [String: AnyObject]) {
         guard let emailAddress = json["email"] as? String,
             let id = json["id"] as? Int,
             let firstName = json["first_name"] as? String,
             let lastInitial = json["last_name"] as? String
             else { return nil }
-        
+
         self.emailAddress = emailAddress
         self.id = id
         self.firstName = firstName
         self.lastInitial = lastInitial
     }
-    
+
     /// Generate a CKRecord representation of user to allow
     /// persisting to CloudKit
     func toRecord() -> CKRecord? {

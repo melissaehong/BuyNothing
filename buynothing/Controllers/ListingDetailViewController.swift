@@ -6,24 +6,28 @@
 //  Copyright © 2017 Jake Romer. All rights reserved.
 //
 
-import UIKit
-import MapKit
 import CoreLocation
+import MapKit
+import UIKit
 
-class ListingDetailViewController: UIViewController  {
+class ListingDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-    
-    let listing = (latitude: 47.606209, longitude: -122.332071)
-    
+
+    let listing = Listing.testListing
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var coordinates = CLLocationCoordinate2D()
-        coordinates.latitude = listing.latitude
-        coordinates.longitude = listing.longitude
-        
+
         let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinates
+        var coordinate: CLLocationCoordinate2D
+
+        if let latitude = listing.latitude, let longitude = listing.longitude {
+            coordinate = CLLocationCoordinate2D()
+            coordinate.latitude = CLLocationDegrees(latitude)
+            coordinate.longitude = CLLocationDegrees(longitude)
+            annotation.coordinate = coordinate
+        }
+
         mapView.addAnnotation(annotation)
     }
 }

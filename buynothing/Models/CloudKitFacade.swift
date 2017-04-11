@@ -15,20 +15,20 @@ typealias CollectionCompletion = ([CKRecord]?) -> Void
 struct CloudKitFacade {
     static let shared = CloudKitFacade()
     private init() {}
-    
+
     let container = CKContainer.default()
-    
+
     var publicDatabase: CKDatabase {
         return container.publicCloudDatabase
     }
-    
+
     /// Save LISTING to CloudKit public database,
     /// yield success boolean to COMPLETION handler.
     func saveListing(_ listing: Listing, completion: @escaping SuccessCompletion) {
         let completeInMain = {(success: Bool) -> Void in
             OperationQueue.main.addOperation { completion(success) }
         }
-        
+
         OperationQueue().addOperation {
             do {
                 if let record = try listing.toRecord() {
@@ -39,12 +39,14 @@ struct CloudKitFacade {
                     }
                 }
             } catch {
-                // Add error handling for record not being created
+                // TODO: Add error handling for record not being created
                 return completeInMain(false)
             }
         }
     }
-    
-    /// getAll
-}
 
+    /// Query CloudKit public database for listings,
+    /// yield success boolean to COMPLETION handler.
+//    func getListings() {
+//    }
+}

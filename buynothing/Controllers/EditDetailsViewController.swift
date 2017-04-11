@@ -11,29 +11,27 @@ import UIKit
 class EditDetailsViewController: UIViewController {
     @IBOutlet weak var listingTitle: UITextField!
     @IBOutlet weak var listingDescription: UITextField!
-    
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        
-        print("button pressed")
-        listing.title = listingTitle.text ?? ""
-        listing.descriptionText = listingDescription.text ?? ""
-        
-        CloudKitFacade.shared.saveListing(listing, completion: { (success) in
-            print("cloudkit save listing")
-            if success {
-                print("posted to cloudkit")
-            } else {
-                print("didn't work :(")
-            }
-        })
-    }
-    
-    
+
     var listing: Listing!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         listingTitle.text = listing.title
         listingDescription.text = listing.descriptionText
+    }
+
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        listing.title = listingTitle.text ?? ""
+        listing.descriptionText = listingDescription.text ?? ""
+
+        CloudKitFacade.shared.saveListing(listing) { (success) in
+            if success {
+                print("posted to cloudkit")
+                // TODO: prompt user
+            } else {
+                print("didn't work :(")
+                // TODO: prompt user
+            }
+        }
     }
 }
