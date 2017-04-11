@@ -246,7 +246,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="CL9-Xx-PVY">
             <objects>
-                <tabBarController id="n0M-Mh-zQD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="n0M-Mh-zQD" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="MMb-1U-uLJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

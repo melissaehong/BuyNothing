@@ -9,19 +9,20 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var listings = [Listing]() {
+    var allListings = [Listing]() {
         didSet {
             collectionView.reloadData()
         }
     }
+    var displayListings : [Listing]?
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        searchBar.delegate = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.searchBar.delegate = self
         
         let user = User(json: [
             "email": "juner@gmail.com" as AnyObject,
@@ -29,7 +30,7 @@ class HomeViewController: UIViewController {
             "first_name": "June" as AnyObject,
             "last_name": "R" as AnyObject
             ])
-        listings = [
+        allListings = [
             Listing(user: user!,
                     descriptionText: "a listing",
                     createdAt: "2017-01-01",
@@ -38,13 +39,14 @@ class HomeViewController: UIViewController {
     }
 }
 
+
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listings.count
+        return allListings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -17,14 +17,21 @@ class AuthController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if (FBSDKAccessToken.current() != nil) {
-            print("Access token success")
+//            print("Access token success")
             performSegue(withIdentifier: "TabBarController", sender: nil)
         } else {
             let facebookLoginButton = FBSDKLoginButton()
             facebookLoginButton.center = self.view.center
             view.addSubview(facebookLoginButton)
         }
+    }
+    
+    //take view off parent view, and parent viewcontroller
+    func dismissAuthController() {
+        
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+        
     }
 }
