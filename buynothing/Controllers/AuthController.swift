@@ -11,16 +11,24 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class AuthController: UIViewController {
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if (FBSDKAccessToken.current() != nil) {
-      print("Access token success")
-      performSegue(withIdentifier: "TabBarController", sender: nil)
-    } else {
-      let facebookLoginButton = FBSDKLoginButton()
-      facebookLoginButton.center = self.view.center
-      view.addSubview(facebookLoginButton)
-    }
   }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if (FBSDKAccessToken.current() != nil) {
+            print("Access token success")
+            performSegue(withIdentifier: "TabBarController", sender: nil)
+        } else {
+            let facebookLoginButton = FBSDKLoginButton()
+            facebookLoginButton.center = self.view.center
+            view.addSubview(facebookLoginButton)
+        }
+        
+        
+    }
+    
 }

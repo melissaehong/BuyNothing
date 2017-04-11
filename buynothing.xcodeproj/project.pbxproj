@@ -34,6 +34,8 @@
 		DA6E6F3C0DC32DF3683A6203 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32234AE8F970A7E859E2466A /* SystemConfiguration.framework */; };
 		DDAE599B0752F11E4637DD02 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B1C0941FFB6FF02E2AC682 /* CoreMedia.framework */; };
 		F21E25C81E9BFDC600648D96 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E25C71E9BFDC600648D96 /* ListingDetailViewController.swift */; };
+		F21E25CA1E9C510400648D96 /* EditDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E25C91E9C510400648D96 /* EditDetailsViewController.swift */; };
+		F21E25CC1E9C537100648D96 /* AddListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E25CB1E9C537100648D96 /* AddListingViewController.swift */; };
 		FEA80EB8F01526FE3DA56725 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE9C6D90AAE5F0BEF7FF6FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		D4A65535C56671D551B0055C /* Pods-buynothingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buynothingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buynothingTests/Pods-buynothingTests.release.xcconfig"; sourceTree = "<group>"; };
 		E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21E25C71E9BFDC600648D96 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingDetailViewController.swift; path = Controllers/ListingDetailViewController.swift; sourceTree = "<group>"; };
+		F21E25C91E9C510400648D96 /* EditDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDetailsViewController.swift; path = Controllers/EditDetailsViewController.swift; sourceTree = "<group>"; };
+		F21E25CB1E9C537100648D96 /* AddListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddListingViewController.swift; path = Controllers/AddListingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,8 @@
 		1B3A97381E9BDC5B0053866B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F21E25CB1E9C537100648D96 /* AddListingViewController.swift */,
+				F21E25C91E9C510400648D96 /* EditDetailsViewController.swift */,
 				F21E25C71E9BFDC600648D96 /* ListingDetailViewController.swift */,
 				1B3A97071E9BDC3A0053866B /* AuthController.swift */,
 				1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */,
@@ -562,11 +568,13 @@
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
 				1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */,
 				1BF46B9D1E9C2382007EDBA0 /* UIResponder.swift in Sources */,
+				F21E25CA1E9C510400648D96 /* EditDetailsViewController.swift in Sources */,
 				1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */,
 				1B3A970E1E9BDC3A0053866B /* buynothing.xcdatamodeld in Sources */,
 				1BF46B9F1E9C24B9007EDBA0 /* Date.swift in Sources */,
 				1B920B4B1E9C397000079011 /* CloudKitFacade.swift in Sources */,
 				1BF46B9B1E9C1A02007EDBA0 /* User.swift in Sources */,
+				F21E25CC1E9C537100648D96 /* AddListingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

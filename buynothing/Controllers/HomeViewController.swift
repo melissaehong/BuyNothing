@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
 
     let user = User(json: [
       "email": "juner@gmail.com" as AnyObject,
-      "id": "39393" as AnyObject,
+      "id": 39393 as AnyObject,
       "first_name": "June" as AnyObject,
       "last_name": "R" as AnyObject
       ])
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
       Listing(user: user!,
               descriptionText: "a listing",
               createdAt: "2017-01-01",
-              duration: 7)
+              duration: 7, title: "This is a title")
     ]
   }
 }
