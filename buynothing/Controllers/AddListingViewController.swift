@@ -12,7 +12,6 @@ class AddListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,9 +38,4 @@ class AddListingViewController: UIViewController {
         
         performSegue(withIdentifier: EditDetailsViewController.reuseID, sender: listing)
     }
-    
 }
-
-
-
-

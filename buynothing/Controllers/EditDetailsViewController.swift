@@ -9,24 +9,14 @@
 import UIKit
 
 class EditDetailsViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        listingTitle.text = listing.title
-        listingDescription.text = listing.descriptionText
-        
-    }
-    
-    
     @IBOutlet weak var listingTitle: UITextField!
-    
     @IBOutlet weak var listingDescription: UITextField!
-    
     
     var listing: Listing!
     
-    
-    
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        listingTitle.text = listing.title
+        listingDescription.text = listing.descriptionText
+    }
 }

@@ -11,13 +11,12 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class AuthController: UIViewController {
-    
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if (FBSDKAccessToken.current() != nil) {
             print("Access token success")
@@ -27,8 +26,5 @@ class AuthController: UIViewController {
             facebookLoginButton.center = self.view.center
             view.addSubview(facebookLoginButton)
         }
-        
-        
     }
-    
 }

@@ -13,38 +13,38 @@ typealias RecordCompletion = (CKRecord?) -> Void
 typealias CollectionCompletion = ([CKRecord]?) -> Void
 
 struct CloudKitFacade {
-  static let shared = CloudKitFacade()
-  private init() {}
-
-  let container = CKContainer.default()
-
-  var publicDatabase: CKDatabase {
-    return container.publicCloudDatabase
-  }
-
-  /// Save LISTING to CloudKit public database,
-  /// yield success boolean to COMPLETION handler.
-  func saveListing(_ listing: Listing, completion: @escaping SuccessCompletion) {
-    let completeInMain = {(success: Bool) -> Void in
-      OperationQueue.main.addOperation { completion(success) }
+    static let shared = CloudKitFacade()
+    private init() {}
+    
+    let container = CKContainer.default()
+    
+    var publicDatabase: CKDatabase {
+        return container.publicCloudDatabase
     }
-
-    OperationQueue().addOperation {
-      do {
-        if let record = try listing.toRecord() {
-          self.publicDatabase.save(record) { (record, error) in
-            // TODO: Add error handling
-            guard error == nil, record != nil else { return completeInMain(false) }
-            return completeInMain(true)
-          }
+    
+    /// Save LISTING to CloudKit public database,
+    /// yield success boolean to COMPLETION handler.
+    func saveListing(_ listing: Listing, completion: @escaping SuccessCompletion) {
+        let completeInMain = {(success: Bool) -> Void in
+            OperationQueue.main.addOperation { completion(success) }
         }
-      } catch {
-        // Add error handling for record not being created
-        return completeInMain(false)
-      }
+        
+        OperationQueue().addOperation {
+            do {
+                if let record = try listing.toRecord() {
+                    self.publicDatabase.save(record) { (record, error) in
+                        // TODO: Add error handling
+                        guard error == nil, record != nil else { return completeInMain(false) }
+                        return completeInMain(true)
+                    }
+                }
+            } catch {
+                // Add error handling for record not being created
+                return completeInMain(false)
+            }
+        }
     }
-  }
-
-  /// getAll
+    
+    /// getAll
 }
 

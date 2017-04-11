@@ -39,9 +39,5 @@ struct Listing {
         
         return record
     }
-    
-    
-    
-    
 }
 
