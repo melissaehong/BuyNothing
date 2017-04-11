@@ -21,7 +21,7 @@ class RoundedEdgeImageView: UIImageView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = bounds.width / 5
+        layer.cornerRadius = bounds.width / 17
         clipsToBounds = true
     }
 }

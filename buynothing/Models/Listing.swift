@@ -33,27 +33,31 @@ struct Listing {
         return listing
     }
 
-    init?(user: User, descriptionText: String, createdAt: Date, duration: Int, title: String) {
+    /// Fetch all Listings available on CloudKit and yield the array of listings
+    /// to the Completion handler on the main queue.
+    static func listAll(completion: @escaping ListingCompletion) {
+        CloudKitFacade.shared.getListings { (records) in
+            guard let records = records else { return }
+            for record in records {
+                let listing = Listing(user: User.testUser,
+                                      descriptionText: record["descriptionText"] as! String,
+                                      createdAt: record["createdAt"] as! Date,
+                                      duration: record["duration"] as! Int,
+                                      title: (record["title"] as? String) ?? "")
+                completion(listing)
+            }
+        }
+    }
 
+
+    init?(user: User, descriptionText: String, createdAt: Date, duration: Int, title: String) {
         self.createdAt = createdAt
         self.user = user
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
     }
-
-    static func listAll(completion: @escaping ListingCompletion) {
-        CloudKitFacade.shared.getListings { (record) in
-            guard let record = record else { return }
-            let listing = Listing(user: User.testUser,
-                                  descriptionText: record["descriptionText"] as! String,
-                                  createdAt: record["createdAt"] as! Date,
-                                  duration: record["duration"] as! Int,
-                                  title: (record["title"] as? String) ?? "")
-            completion(listing)
-        }
-    }
-
+    
     /// Generate a CKRecord representation of listing to allow
     /// persisting to CloudKit
     func toRecord() throws -> CKRecord? {

@@ -47,16 +47,19 @@ struct CloudKitFacade {
 
     /// Query CloudKit public database for listings,
     /// yield success boolean to COMPLETION handler.
-    func getListings(completion: @escaping RecordCompletion) {
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Listings", predicate: predicate)
-
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            if error != nil { return completion(nil) }
-            guard let records = records else { return completion(nil) }
-
-            for record in records {
-                completion(record)
+    func getListings(completion: @escaping CollectionCompletion) {
+        let completeInMain = { (records: [CKRecord]?) in
+            OperationQueue.main.addOperation { completion(records) }
+        }
+        
+        OperationQueue().addOperation {
+            let predicate = NSPredicate(value: true)
+            let query = CKQuery(recordType: "Listings", predicate: predicate)
+            
+            self.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
+                if error != nil { return completeInMain(nil) }
+                guard let records = records else { return completeInMain(nil) }
+                completeInMain(records)
             }
         }
     }
