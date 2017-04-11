@@ -58,10 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tabBarController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
             window?.rootViewController = tabBarController
         }
-        print(options)
-        print(app)
-        print(url)
-        print(sourceApplication)
+ 
         return true
     }
     
