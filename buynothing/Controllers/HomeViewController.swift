@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     var allListings = [Listing]() {
         didSet { collectionView.reloadData() }
@@ -22,13 +23,18 @@ class HomeViewController: UIViewController {
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
 
+        let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
+        collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
+        collectionView.collectionViewLayout = GalleryViewLayout(columns: 2)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        allListings.removeAll()
         Listing.listAll { (listing) in
             guard let listing = listing else { return }
             self.allListings.append(listing)
         }
-
-        let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
-        collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
+        loadingIndicator.stopAnimating()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -20,8 +20,9 @@ class MapNibCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
         self.mapView.delegate = self
-        
+
     }
     
     func getCoordinate() -> CLLocationCoordinate2D {
