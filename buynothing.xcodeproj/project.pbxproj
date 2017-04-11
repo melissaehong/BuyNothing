@@ -42,6 +42,7 @@
 		F2D8356F1E9D3D7100C139A9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D8356E1E9D3D7100C139A9 /* CoreLocation.framework */; };
 		F2D835721E9D3EE200C139A9 /* MapNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D835701E9D3EE200C139A9 /* MapNibCell.swift */; };
 		F2D835731E9D3EE200C139A9 /* MapNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D835711E9D3EE200C139A9 /* MapNibCell.xib */; };
+		F2D835751E9D584A00C139A9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D835741E9D584A00C139A9 /* LocationManager.swift */; };
 		FEA80EB8F01526FE3DA56725 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE9C6D90AAE5F0BEF7FF6FD /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		F2D8356E1E9D3D7100C139A9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F2D835701E9D3EE200C139A9 /* MapNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNibCell.swift; sourceTree = "<group>"; };
 		F2D835711E9D3EE200C139A9 /* MapNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapNibCell.xib; sourceTree = "<group>"; };
+		F2D835741E9D584A00C139A9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 		1B3A97361E9BDC500053866B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F2D835741E9D584A00C139A9 /* LocationManager.swift */,
 				1BF46B981E9C17C7007EDBA0 /* Listing.swift */,
 				1BF46B9A1E9C1A02007EDBA0 /* User.swift */,
 				1B920B4A1E9C397000079011 /* CloudKitFacade.swift */,
@@ -590,6 +593,7 @@
 				1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */,
 				F21E25C81E9BFDC600648D96 /* ListingDetailViewController.swift in Sources */,
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
+				F2D835751E9D584A00C139A9 /* LocationManager.swift in Sources */,
 				1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */,
 				1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */,
 				1BF46B9D1E9C2382007EDBA0 /* UIResponder.swift in Sources */,

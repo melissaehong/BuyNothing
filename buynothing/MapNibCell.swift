@@ -28,7 +28,7 @@ class MapNibCell: UITableViewCell, CLLocationManagerDelegate, MKMapViewDelegate{
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        addRadiusCircle(userLocation: CLLocation)
+//        addRadiusCircle(userLocation: CLLocation)
         
     }
     

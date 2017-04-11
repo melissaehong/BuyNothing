@@ -17,8 +17,8 @@ struct Listing {
     let duration: Int
     var descriptionText: String
     var title: String
-    var latitude: Float?
-    var longitude: Float?
+    var latitude: Double?
+    var longitude: Double?
 
     static var testListing: Listing {
         let createdAtDate = Date.fromString("2017-01-01")
@@ -40,6 +40,11 @@ struct Listing {
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
+        
+        if let location = LocationManager.shared.getLocation() as? CLLocation {
+        self.latitude = location.coordinate.latitude
+        self.longitude = location.coordinate.longitude
+        }
     }
 
     static func listAll(completion: @escaping ListingCompletion) {
