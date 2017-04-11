@@ -55,9 +55,9 @@ struct Listing {
         self.descriptionText = descriptionText
         self.title = title
 
-        if let location = LocationManager.shared.getLocation() as? CLLocation {
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
+        if let location = LocationManager.shared.getLocation() {
+            self.latitude = location.coordinate.latitude
+            self.longitude = location.coordinate.longitude
         }
     }
 

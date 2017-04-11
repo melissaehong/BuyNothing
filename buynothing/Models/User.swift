@@ -41,13 +41,13 @@ struct User {
             self.latitude = location.coordinate.latitude
             self.longitude = location.coordinate.longitude
         }
+    }
 
-        /// Generate a CKRecord representation of user to allow
-        /// persisting to CloudKit
-        func toRecord() -> CKRecord? {
-            let record = CKRecord(recordType: "Users")
-            record["emailAddress"] = emailAddress as CKRecordValue
-            return record
-        }
+    /// Generate a CKRecord representation of user to allow
+    /// persisting to CloudKit
+    func toRecord() -> CKRecord? {
+        let record = CKRecord(recordType: "Users")
+        record["emailAddress"] = emailAddress as CKRecordValue
+        return record
     }
 }
