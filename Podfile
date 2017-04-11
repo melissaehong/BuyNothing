@@ -8,6 +8,7 @@ target "buynothing" do
   pod "FBSDKCoreKit"
   pod "FBSDKLoginKit"
   pod "FBSDKShareKit"
+  pod "AlamofireImage", "~> 3.2"    
   
   target "buynothingTests" do
     inherit! :search_paths

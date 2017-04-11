@@ -12,6 +12,7 @@
 		1B33E4171E9D31620054B4CE /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B33E4151E9D31620054B4CE /* ListingCell.xib */; };
 		1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */; };
 		1B33E41B1E9D54EC0054B4CE /* GalleryViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E41A1E9D54EC0054B4CE /* GalleryViewLayout.swift */; };
+		1B33E41D1E9D7BB90054B4CE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E41C1E9D7BB90054B4CE /* UIImage.swift */; };
 		1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97051E9BDC3A0053866B /* AppDelegate.swift */; };
 		1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97071E9BDC3A0053866B /* AuthController.swift */; };
 		1B3A970B1E9BDC3A0053866B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A97091E9BDC3A0053866B /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		1B33E4151E9D31620054B4CE /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListingCell.xib; path = Views/ListingCell.xib; sourceTree = "<group>"; };
 		1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedEdgeImageView.swift; path = Views/RoundedEdgeImageView.swift; sourceTree = "<group>"; };
 		1B33E41A1E9D54EC0054B4CE /* GalleryViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryViewLayout.swift; path = Views/GalleryViewLayout.swift; sourceTree = "<group>"; };
+		1B33E41C1E9D7BB90054B4CE /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
 		1B3A97021E9BDC3A0053866B /* buynothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buynothing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3A97051E9BDC3A0053866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3A97071E9BDC3A0053866B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = Controllers/AuthController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				1BF46B9C1E9C2382007EDBA0 /* UIResponder.swift */,
 				1BF46B9E1E9C24B9007EDBA0 /* Date.swift */,
+				1B33E41C1E9D7BB90054B4CE /* UIImage.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
 				1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */,
 				1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */,
+				1B33E41D1E9D7BB90054B4CE /* UIImage.swift in Sources */,
 				1BF46B9D1E9C2382007EDBA0 /* UIResponder.swift in Sources */,
 				F21E25CA1E9C510400648D96 /* EditDetailsViewController.swift in Sources */,
 				1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */,
