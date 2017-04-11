@@ -22,7 +22,6 @@ class ListingCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-
     override func prepareForReuse() {
         listingMainImage.image = nil
         listingTitle.text = nil

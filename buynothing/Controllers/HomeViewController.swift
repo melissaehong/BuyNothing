@@ -22,7 +22,10 @@ class HomeViewController: UIViewController {
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
 
-        allListings = [Listing.testListing]
+        Listing.listAll { (listing) in
+            guard let listing = listing else { return }
+            self.allListings.append(listing)
+        }
 
         let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)

@@ -9,19 +9,19 @@
 import UIKit
 
 class RoundedEdgeImageView: UIImageView {
-  override var bounds: CGRect {
-    get {
-      return super.bounds
+    override var bounds: CGRect {
+        get {
+            return super.bounds
+        }
+        set {
+            super.bounds = newValue
+            setNeedsLayout()
+        }
     }
-    set {
-      super.bounds = newValue
-      setNeedsLayout()
-    }
-  }
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    layer.cornerRadius = bounds.width / 5
-    clipsToBounds = true
-  }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 5
+        clipsToBounds = true
+    }
 }

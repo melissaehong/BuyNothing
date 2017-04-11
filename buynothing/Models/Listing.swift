@@ -9,6 +9,8 @@
 import CloudKit
 import Foundation
 
+typealias ListingCompletion = (Listing?) -> Void
+
 struct Listing {
     let user: User
     let createdAt: Date
@@ -19,9 +21,11 @@ struct Listing {
     var longitude: Float?
 
     static var testListing: Listing {
+        let createdAtDate = Date.fromString("2017-01-01")
+
         var listing = Listing(user: User.testUser,
                               descriptionText: "Yo nobody in my hood got one.",
-                              createdAt: "2017-01-01",
+                              createdAt: createdAtDate!,
                               duration: 7,
                               title: "Datsun Z28")!
         listing.latitude = 47.606_209
@@ -29,15 +33,25 @@ struct Listing {
         return listing
     }
 
-    init?(user: User, descriptionText: String, createdAt: String, duration: Int, title: String) {
-        guard let createdAtDate = Date.fromString(createdAt)
-            else { return nil }
+    init?(user: User, descriptionText: String, createdAt: Date, duration: Int, title: String) {
 
+        self.createdAt = createdAt
         self.user = user
-        self.createdAt = createdAtDate
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
+    }
+
+    static func listAll(completion: @escaping ListingCompletion) {
+        CloudKitFacade.shared.getListings { (record) in
+            guard let record = record else { return }
+            let listing = Listing(user: User.testUser,
+                                  descriptionText: record["descriptionText"] as! String,
+                                  createdAt: record["createdAt"] as! Date,
+                                  duration: record["duration"] as! Int,
+                                  title: (record["title"] as? String) ?? "")
+            completion(listing)
+        }
     }
 
     /// Generate a CKRecord representation of listing to allow
