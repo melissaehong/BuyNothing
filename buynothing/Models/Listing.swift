@@ -13,8 +13,8 @@ struct Listing {
     let user: User
     let createdAt: Date
     let duration: Int
-    let descriptionText: String
-    let title: String
+    var descriptionText: String
+    var title: String
     
     init(user: User, descriptionText: String, createdAt: String, duration: Int, title: String) {
         self.user = user
