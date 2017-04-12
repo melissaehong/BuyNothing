@@ -11,10 +11,13 @@ import MapKit
 import CoreLocation
 
 class ListingDetailMoreInfoViewController: UIViewController {
-    // setting up user location, pin and overlay
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
-    var listing: Listing!
+    var selectedListing: Listing! = Listing.testListing
 
     // TEMPORARY
     let listingLocation = CLLocationCoordinate2DMake(47.606209, -122.332071)
@@ -24,8 +27,15 @@ class ListingDetailMoreInfoViewController: UIViewController {
         mapView.delegate = self
         LocationManager.shared.requestPermission()
 
+        if (selectedListing) != nil {
+            self.titleLabel.text = self.selectedListing.title
+            self.descriptionLabel.text = self.selectedListing.descriptionText
+            self.categoryLabel.text = "No Category Selected"
+            self.locationLabel.text = "Location"
+        }
+
         // TEMPORARY
-        listing = Listing.testListing
+//        selectedListing = Listing.testListing
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +50,10 @@ class ListingDetailMoreInfoViewController: UIViewController {
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
         mapView.add(circle)
+    }
+
+    @IBAction func closeButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

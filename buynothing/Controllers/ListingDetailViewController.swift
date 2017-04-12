@@ -9,9 +9,10 @@
 import UIKit
 
 class ListingDetailViewController: UIViewController {
-    var listing: Listing!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var listingTitle: UILabel!
+
+    var listing: Listing!
 
     override func viewDidLoad() {
         super.viewDidLoad()
