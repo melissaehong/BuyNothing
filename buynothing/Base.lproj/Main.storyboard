@@ -144,27 +144,6 @@
             </objects>
             <point key="canvasLocation" x="1836" y="-903.59820089955031"/>
         </scene>
-        <!--User Profile-->
-        <scene sceneID="Pmf-NC-tzl">
-            <objects>
-                <viewController title="User Profile" id="MBT-m3-nZd" customClass="ProfileSceneViewController" customModule="buynothing" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NNm-ZR-Isc"/>
-                        <viewControllerLayoutGuide type="bottom" id="fRK-T9-QQy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZCL-ww-mW7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profile" id="ql7-nI-Cn8">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R1w-eT-cxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1836" y="754"/>
-        </scene>
         <!--Listing Detail View Controller-->
         <scene sceneID="Q63-ed-ecT">
             <objects>
@@ -314,7 +293,7 @@
                     <connections>
                         <segue destination="aKN-tM-EHL" kind="relationship" relationship="viewControllers" id="q24-yY-b4Q"/>
                         <segue destination="gEu-fQ-wlx" kind="relationship" relationship="viewControllers" id="hU8-JW-OOZ"/>
-                        <segue destination="MBT-m3-nZd" kind="relationship" relationship="viewControllers" id="YLQ-WG-d5h"/>
+                        <segue destination="yzF-rQ-Py7" kind="relationship" relationship="viewControllers" id="3pE-ed-3R4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1E-2f-uDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,38 +324,21 @@
             </objects>
             <point key="canvasLocation" x="1836" y="-27"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tyA-DX-Sdd">
+        <!--ProfileSceneViewController-->
+        <scene sceneID="1CG-xg-UMn">
             <objects>
-                <viewController id="xuq-y0-buh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zAt-FP-bBC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7S3-d7-dtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ProfileSceneViewController" id="yzF-rQ-Py7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="leR-zE-eEa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeM-B5-qIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tzS-fr-ni5">
-            <objects>
-                <viewController id="LPx-pB-Ujh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6dW-tc-s6Z">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="141"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Be3-u7-Cu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1252" y="725"/>
         </scene>
     </scenes>
     <resources>
         <image name="BuyNothingLogo" width="150" height="269"/>
         <image name="add" width="25" height="25"/>
         <image name="house" width="23" height="25"/>
-        <image name="profile" width="23" height="25"/>
         <image name="sharing" width="426" height="284"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
