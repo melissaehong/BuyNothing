@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
+    var refreshControl : UIRefreshControl!
+    
     var allListings = [Listing]() {
         didSet { collectionView.reloadData() }
     }
@@ -32,6 +34,10 @@ class HomeViewController: UIViewController {
         let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
         collectionView.collectionViewLayout = GalleryViewLayout()
+        refreshControl = UIRefreshControl()
+        
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,19 +45,7 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        loadingIndicator.startAnimating()
-
-        Listing.listAll { (listings) in
-            guard let listings = listings else { return }
-
-            if listings.isEmpty {
-                print("no results")
-                // TODO: let the user know the query returned no results
-            }
-
-            self.allListings = listings
-            self.loadingIndicator.stopAnimating()
-        }
+        loadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,6 +55,30 @@ class HomeViewController: UIViewController {
             controller.listing = selectedListing
             return
         }
+    }
+    
+    func loadData() {
+        
+        loadingIndicator.startAnimating()
+        
+        Listing.listAll { (listings) in
+            guard let listings = listings else { return }
+            
+            if listings.isEmpty {
+                print("no results")
+                // TODO: let the user know the query returned no results
+            }
+            
+            self.allListings = listings
+            self.loadingIndicator.stopAnimating()
+        }
+
+        stopRefresher()         //Call this to stop refresher
+    }
+    
+    func stopRefresher()
+    {
+        refreshControl?.endRefreshing()
     }
 }
 

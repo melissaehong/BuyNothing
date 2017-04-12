@@ -28,25 +28,26 @@ class ProfileViewController: UIViewController {
     var listings = [Listing]() {
         didSet { collectionView.reloadData() }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        
         let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
         collectionView.collectionViewLayout = GalleryViewLayout()
-
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
         collectionView.addSubview(refreshControl)
-    }
 
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         loadData()
     }
@@ -64,27 +65,33 @@ class ProfileViewController: UIViewController {
 
        stopRefresher()          // Call this to stop refresher
     }
-
-    func stopRefresher() {
+    
+    func stopRefresher()
+    {
         refreshControl?.endRefreshing()
     }
+    
 }
 
+
+
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listings.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListingCell.reuseID, for: indexPath) as! ListingCell
         cell.listing = listings[indexPath.row]
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected the cell at index \(indexPath.row)")
         // TODO: segue to listing detail view controller, setting the selected listing
