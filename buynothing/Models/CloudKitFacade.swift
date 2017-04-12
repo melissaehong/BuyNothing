@@ -50,15 +50,22 @@ struct CloudKitFacade {
 
     /// Query CloudKit public database for listings,
     /// yield success boolean to COMPLETION handler.
-    func getListings(completion: @escaping CollectionCompletion) {
+    func getListings(matchingTerms searchTerms: [String]? = nil,
+                     completion: @escaping CollectionCompletion) {
+
         let completeInMain = { (records: [CKRecord]?) in
             OperationQueue.main.addOperation { completion(records) }
         }
 
-        OperationQueue().addOperation {
-            let predicate = NSPredicate(value: true)
-            let query = CKQuery(recordType: "Listings", predicate: predicate)
+        let predicate: NSPredicate
+        if let searchTerms = searchTerms {
+            predicate = NSPredicate(format: "self contains %@", argumentArray: searchTerms)
+        } else {
+            predicate = NSPredicate(value: true)
+        }
 
+        OperationQueue().addOperation {
+            let query = CKQuery(recordType: "Listings", predicate: predicate)
             self.publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
                 if error != nil { return completeInMain(nil) }
                 guard let records = records else { return completeInMain(nil) }

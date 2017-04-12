@@ -36,8 +36,9 @@ struct Listing {
 
     /// Fetch all Listings available on CloudKit and yield the array of listings
     /// to the Completion handler on the main queue.
-    static func listAll(completion: @escaping ListingsCompletion) {
-        CloudKitFacade.shared.getListings { (records) in
+    static func listAll(matchingTerms searchTerms: [String]? = nil,
+                        completion: @escaping ListingsCompletion) {
+        CloudKitFacade.shared.getListings(matchingTerms: searchTerms) { (records) in
             guard let records = records else { return }
             var listings = [Listing]()
 

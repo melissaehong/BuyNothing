@@ -20,9 +20,8 @@ extension Date {
    - Long: "November 23, 1937" or "3:30:32 PM PST"
    - Full: "Tuesday, April 12, 1952 AD" or "3:30:42 PM Pacific Standard Time"
 
-   - Parameters:
-   - dateStyle: see Examples
-   - timeStyle: see Examples
+   - Parameter dateStyle: see Examples
+   - Parameter timeStyle: see Examples
 
    - Returns: String
    */
@@ -46,9 +45,8 @@ extension Date {
    // Optional(2011-01-26 19:01:12 +0000)
    ```
 
-   - Parameters:
-   - dateString: a date string
-   - dateFormat: a date format template string
+   - Parameter dateString: a date string
+   - Parameter dateFormat: a date format template string
 
    - Returns: Date?
    */

@@ -8,9 +8,7 @@
 
 import UIKit
 
-// TODO: 
-// - Implement Search
-// - Implement pull to refresh
+// TODO:
 // - Paginate results of queries
 
 class HomeViewController: UIViewController {
@@ -18,9 +16,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
-    var refreshControl : UIRefreshControl!
-    
-    var allListings = [Listing]() {
+    var refreshControl: UIRefreshControl!
+    var listings = [Listing]() {
         didSet { collectionView.reloadData() }
     }
 
@@ -35,17 +32,18 @@ class HomeViewController: UIViewController {
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
         collectionView.collectionViewLayout = GalleryViewLayout()
         refreshControl = UIRefreshControl()
-        
-        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(loadListings), for: .valueChanged)
         collectionView.addSubview(refreshControl)
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        loadData()
+        super.viewDidAppear(animated)
+        loadListings()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,28 +54,27 @@ class HomeViewController: UIViewController {
             return
         }
     }
-    
-    func loadData() {
-        
+
+    func loadListings() {
         loadingIndicator.startAnimating()
-        
-        Listing.listAll { (listings) in
+
+        Listing.listAll(matchingTerms: nil) { (listings) in
             guard let listings = listings else { return }
-            
+
             if listings.isEmpty {
                 print("no results")
                 // TODO: let the user know the query returned no results
             }
-            
-            self.allListings = listings
+
+            self.listings = listings
             self.loadingIndicator.stopAnimating()
         }
 
-        stopRefresher()         //Call this to stop refresher
+        stopRefresher()
     }
-    
-    func stopRefresher()
-    {
+
+    // Call this to stop refresher
+    func stopRefresher() {
         refreshControl?.endRefreshing()
     }
 }
@@ -88,24 +85,46 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allListings.count
+        return listings.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListingCell.reuseID, for: indexPath) as! ListingCell
-        cell.listing = allListings[indexPath.row]
+        cell.listing = listings[indexPath.row]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCell = allListings[indexPath.row]
+        let selectedCell = listings[indexPath.row]
         performSegue(withIdentifier: ListingDetailViewController.reuseID, sender: selectedCell)
     }
 }
 
 extension HomeViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("searchBarTextDidEndEditing")
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, text.characters.count > 0 else { return }
+        let searchTerms = text.scan("[:word:]+")
+        guard searchTerms.count > 0 else { searchBar.text = ""; return }
+
+        // perform search query, load results, prompt if none
+        loadingIndicator.startAnimating()
+
+        Listing.listAll(matchingTerms: searchTerms) { (listings) in
+            guard let listings = listings else { return }
+
+            if listings.isEmpty {
+                print("no results")
+                // TODO: let the user know the query returned no results
+            }
+
+            self.listings = listings
+            self.loadingIndicator.stopAnimating()
+        }
+
+        stopRefresher()
+
+        // Send the keyboard away
+        searchBar.resignFirstResponder()
     }
 }
