@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B58C56C569980CFB7AA82D8 /* Pods_buynothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */; };
+		1B05078B1E9EAB8C00C2164A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05078A1E9EAB8C00C2164A /* String.swift */; };
 		1B0CE5221E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CE5211E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard */; };
 		1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4141E9D31620054B4CE /* ListingCell.swift */; };
 		1B33E4171E9D31620054B4CE /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B33E4151E9D31620054B4CE /* ListingCell.xib */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B05078A1E9EAB8C00C2164A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extensions/String.swift; sourceTree = "<group>"; };
 		1B0CE5211E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ListingDetailMoreInfoViewController.storyboard; path = Storyboards/ListingDetailMoreInfoViewController.storyboard; sourceTree = "<group>"; };
 		1B33E4141E9D31620054B4CE /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Views/ListingCell.swift; sourceTree = "<group>"; };
 		1B33E4151E9D31620054B4CE /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListingCell.xib; path = Views/ListingCell.xib; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				1BF46B9C1E9C2382007EDBA0 /* UIResponder.swift */,
 				1BF46B9E1E9C24B9007EDBA0 /* Date.swift */,
 				1B33E41C1E9D7BB90054B4CE /* UIImage.swift */,
+				1B05078A1E9EAB8C00C2164A /* String.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 			files = (
 				1BF46B971E9C1795007EDBA0 /* HomeViewController.swift in Sources */,
 				1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */,
+				1B05078B1E9EAB8C00C2164A /* String.swift in Sources */,
 				F21E25C81E9BFDC600648D96 /* ListingDetailViewController.swift in Sources */,
 				1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */,
 				F2D835751E9D584A00C139A9 /* LocationManager.swift in Sources */,
