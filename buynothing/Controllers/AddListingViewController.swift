@@ -11,7 +11,7 @@ import UIKit
 class AddListingViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     var newListing: Listing?
-    var imagePickCancelled: Bool = false
+    var imagePickWasCancelled: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,22 +20,24 @@ class AddListingViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard !imagePickCancelled else {
-            imagePickCancelled = false
-            tabBarController?.selectedIndex = 0
-            return
-        }
 
-        if let newListing = newListing {
-            performSegue(withIdentifier: EditDetailsViewController.reuseID, sender: newListing)
+        if imagePickWasCancelled {
+            imagePickWasCancelled = false
+            tabBarController?.selectedIndex = 0
+        } else if let newListing = newListing {
+            // if an image was selected / a new listing was created,
+            // segue to the edit detail view controller
+            performSegue(withIdentifier: EditListingViewController.reuseID, sender: newListing)
         } else {
+            // if beginning the add listing flow for the first time,
+            // present the image picker
             present(imagePicker, animated: true)
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == EditDetailsViewController.reuseID,
-            let controller = segue.destination as? EditDetailsViewController,
+        if segue.identifier == EditListingViewController.reuseID,
+            let controller = segue.destination as? EditListingViewController,
             let listing = sender as? Listing {
             controller.listing = listing
             return
@@ -62,19 +64,19 @@ extension AddListingViewController: UIImagePickerControllerDelegate, UINavigatio
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.newListing = Listing()
-        guard var newListing = newListing else { return }
 
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            newListing.image = image
+            newListing?.image = image
         } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            newListing.image = image
+            newListing?.image = image
         }
 
+        newListing?.user = User.testUser
         imagePicker.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        imagePickCancelled = true
+        imagePickWasCancelled = true
         imagePicker.dismiss(animated: true, completion: nil)
     }
 }

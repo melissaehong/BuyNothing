@@ -6,28 +6,25 @@
 //  Copyright © 2017 Jake Romer. All rights reserved.
 //
 
-import CoreLocation
-import MapKit
 import UIKit
 
 class ListingDetailViewController: UIViewController {
-    @IBOutlet weak var mapView: MKMapView!
-
     var listing: Listing!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var listingTitle: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = listing.image
+        listingTitle.text = listing.title
+    }
 
-        let annotation = MKPointAnnotation()
-        var coordinate: CLLocationCoordinate2D
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
-        if let latitude = listing.latitude, let longitude = listing.longitude {
-            coordinate = CLLocationCoordinate2D()
-            coordinate.latitude = CLLocationDegrees(latitude)
-            coordinate.longitude = CLLocationDegrees(longitude)
-            annotation.coordinate = coordinate
-        }
-
-        mapView.addAnnotation(annotation)
+    @IBAction func closeButtonWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

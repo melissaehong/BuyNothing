@@ -11,8 +11,18 @@ import FBSDKLoginKit
 import UIKit
 
 class AuthController: UIViewController {
+    @IBOutlet weak var splashImage: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setRandomlySelectedSplashImage()
+    }
+
+    func setRandomlySelectedSplashImage() {
+        let numberOfSplashImagesAvailable = 11
+        let rand = Int(arc4random_uniform(UInt32(numberOfSplashImagesAvailable - 1)))
+        let splashImageName = "splash_\(rand + 1)"
+        splashImage.image = UIImage(named: splashImageName)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -21,9 +31,15 @@ class AuthController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             performSegue(withIdentifier: UITabBarController.reuseID, sender: nil)
         } else {
-            let facebookLoginButton = FBSDKLoginButton()
-            facebookLoginButton.center = self.view.center
-            view.addSubview(facebookLoginButton)
+            setFacebookLoginButtonOnScreen()
         }
+    }
+
+    func setFacebookLoginButtonOnScreen() {
+        let screen = UIScreen.main.bounds.size
+        let centerBottomQuarter = CGPoint(x: screen.width / 2.0, y: screen.height * 4 / 5.0)
+        let facebookLoginButton = FBSDKLoginButton()
+        facebookLoginButton.center = centerBottomQuarter
+        view.addSubview(facebookLoginButton)
     }
 }

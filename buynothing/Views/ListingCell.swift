@@ -15,6 +15,7 @@ class ListingCell: UICollectionViewCell {
     var listing: Listing! {
         didSet {
             listingTitle.text = listing.title
+            listingMainImage.image = listing.image
         }
     }
 

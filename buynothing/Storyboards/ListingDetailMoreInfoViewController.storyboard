@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="goA-FW-qoy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Listing Detail More Info-->
+        <scene sceneID="lIn-um-d37">
+            <objects>
+                <viewController title="Listing Detail More Info" id="goA-FW-qoy" customClass="ListingDetailMoreInfoViewController" customModule="buynothing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qwc-Yp-elM"/>
+                        <viewControllerLayoutGuide type="bottom" id="P3c-Lg-4gg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oUJ-G8-LBj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sFt-vM-Dhu">
+                                <rect key="frame" x="16" y="208.5" width="343" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="O7I-yl-5AR"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sFt-vM-Dhu" firstAttribute="leading" secondItem="oUJ-G8-LBj" secondAttribute="leadingMargin" id="3M1-YY-i0p"/>
+                            <constraint firstItem="sFt-vM-Dhu" firstAttribute="trailing" secondItem="oUJ-G8-LBj" secondAttribute="trailingMargin" id="BJe-wr-L1j"/>
+                            <constraint firstItem="sFt-vM-Dhu" firstAttribute="centerX" secondItem="oUJ-G8-LBj" secondAttribute="centerX" id="a3A-H8-8po"/>
+                            <constraint firstItem="sFt-vM-Dhu" firstAttribute="centerY" secondItem="oUJ-G8-LBj" secondAttribute="centerY" id="fsH-E2-W5X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="sFt-vM-Dhu" id="EY1-mQ-aAN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VqX-QZ-syt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4201" y="-504"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+</document>

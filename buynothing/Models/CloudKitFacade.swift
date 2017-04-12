@@ -8,9 +8,10 @@
 
 import CloudKit
 
-typealias SuccessCompletion = (Bool) -> Void
 typealias RecordCompletion = (CKRecord?) -> Void
 typealias CollectionCompletion = ([CKRecord]?) -> Void
+
+// TODO: Check if user is logged into icloud. If not, prompt them to.
 
 struct CloudKitFacade {
     static let shared = CloudKitFacade()
@@ -24,9 +25,9 @@ struct CloudKitFacade {
 
     /// Save LISTING to CloudKit public database,
     /// yield success boolean to COMPLETION handler.
-    func saveListing(_ listing: Listing, completion: @escaping SuccessCompletion) {
-        let completeInMain = {(success: Bool) -> Void in
-            OperationQueue.main.addOperation { completion(success) }
+    func saveListing(_ listing: Listing, completion: @escaping RecordCompletion) {
+        let completeInMain = {(record: CKRecord?) -> Void in
+            OperationQueue.main.addOperation { completion(record) }
         }
 
         OperationQueue().addOperation {
@@ -34,13 +35,15 @@ struct CloudKitFacade {
                 if let record = try listing.toRecord() {
                     self.publicDatabase.save(record) { (record, error) in
                         // TODO: Add error handling
-                        guard error == nil, record != nil else { return completeInMain(false) }
-                        return completeInMain(true)
+                        guard error == nil, record != nil else {
+                            return completeInMain(nil)
+                        }
+                        return completeInMain(record)
                     }
                 }
             } catch {
                 // TODO: Add error handling for record not being created
-                return completeInMain(false)
+                return completeInMain(nil)
             }
         }
     }

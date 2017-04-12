@@ -8,6 +8,11 @@
 
 import UIKit
 
+// TODO: 
+// - Implement Search
+// - Implement pull to refresh
+// - Paginate results of queries
+
 class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,22 +24,27 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.searchBar.delegate = self
+        searchBar.delegate = self
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
-        collectionView.collectionViewLayout = GalleryViewLayout(columns: 2)
+        collectionView.collectionViewLayout = GalleryViewLayout()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        allListings.removeAll()
         Listing.listAll { (listing) in
             guard let listing = listing else { return }
+            self.loadingIndicator.startAnimating()
             self.allListings.append(listing)
+            self.loadingIndicator.stopAnimating()
         }
-        loadingIndicator.stopAnimating()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,6 +81,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("ended editing")
+        print("searchBarTextDidEndEditing")
     }
 }

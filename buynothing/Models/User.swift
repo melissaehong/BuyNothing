@@ -36,11 +36,6 @@ struct User {
         self.id = id
         self.firstName = firstName
         self.lastInitial = lastInitial
-
-        if let location = LocationManager.shared.getLocation() {
-            self.latitude = location.coordinate.latitude
-            self.longitude = location.coordinate.longitude
-        }
     }
 
     /// Generate a CKRecord representation of user to allow

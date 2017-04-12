@@ -27,4 +27,13 @@ extension UIImage {
             }
         }
     }
+
+    /// Return the path of the given image on the local file system
+    var path: URL {
+        if let docsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            return docsDirectory.appendingPathComponent("image")
+        } else {
+            fatalError("Error accessing documents directory")
+        }
+    }
 }

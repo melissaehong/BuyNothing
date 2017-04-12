@@ -11,54 +11,41 @@ import MapKit
 import CoreLocation
 
 class LocationManager: NSObject {
-
-    let manager = CLLocationManager()
-
     static let shared = LocationManager()
+    let manager = CLLocationManager()
 
     override init() {
         super.init()
-        self.manager.delegate = self
-        self.manager.desiredAccuracy = kCLLocationAccuracyBest
-        self.manager.distanceFilter = 1_000
-
-        self.requestPermission()
-
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = 1_000
     }
 
     func requestPermission() {
-        if ((CLLocationManager.authorizationStatus() == CLAuthorizationStatus.restricted) || (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied)) {
+        print("requestPermission")
+        let authStatus = CLLocationManager.authorizationStatus()
+        let authIsRestricted = authStatus == CLAuthorizationStatus.restricted
+        let authIsDenied = authStatus == CLAuthorizationStatus.denied
 
-            print("Location Authorization denied")
-
-            self.manager.requestWhenInUseAuthorization()
-
+        if authIsRestricted || authIsDenied {
+            print("Location authorization restricted or denied")
+            manager.requestWhenInUseAuthorization()
         } else {
-            print("Location Services enabled")
+            print("Location services enabled")
             CLLocationManager.locationServicesEnabled()
+            manager.requestLocation()
         }
     }
-
-    func getLocation() -> CLLocation? {
-        self.manager.requestLocation()
-        if let location = self.manager.location {
-            return location
-        }
-        return nil
-    }
-
 }
 
-//EXTENSION: CLLocationManagerDelegate
-
+// MARK: CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
-
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Location updated")
+        debugPrint(locations)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-
 }
