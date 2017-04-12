@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
+    var refreshControl: UIRefreshControl!
+
     var listings = [Listing]() {
         didSet { collectionView.reloadData() }
     }
@@ -35,6 +37,10 @@ class ProfileViewController: UIViewController {
         let listingCell = UINib(nibName: ListingCell.reuseID, bundle: nil)
         collectionView.register(listingCell, forCellWithReuseIdentifier: ListingCell.reuseID)
         collectionView.collectionViewLayout = GalleryViewLayout()
+
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +48,10 @@ class ProfileViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        loadingIndicator.startAnimating()
+        loadData()
+    }
 
+    func loadData() {
         Listing.listAll { (listings) in
             guard let listings = listings else { return }
             if listings.isEmpty {
@@ -53,6 +61,12 @@ class ProfileViewController: UIViewController {
             self.listings = listings
             self.loadingIndicator.stopAnimating()
         }
+
+       stopRefresher()          // Call this to stop refresher
+    }
+
+    func stopRefresher() {
+        refreshControl?.endRefreshing()
     }
 }
 
