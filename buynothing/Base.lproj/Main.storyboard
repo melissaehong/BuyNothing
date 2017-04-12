@@ -147,7 +147,7 @@
         <!--User Profile-->
         <scene sceneID="Pmf-NC-tzl">
             <objects>
-                <viewController title="User Profile" id="MBT-m3-nZd" sceneMemberID="viewController">
+                <viewController title="User Profile" id="MBT-m3-nZd" customClass="ProfileSceneViewController" customModule="buynothing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NNm-ZR-Isc"/>
                         <viewControllerLayoutGuide type="bottom" id="fRK-T9-QQy"/>

@@ -40,9 +40,9 @@ struct Listing {
             guard let records = records else { return }
             for record in records {
                 var listing = Listing(user: User.testUser,
-                                      descriptionText: record["descriptionText"] as! String,
-                                      duration: record["duration"] as! Int,
-                                      title: record["title"] as! String)
+                                      descriptionText: record["descriptionText"] as? String ?? "",
+                                      duration: record["duration"] as? Int ?? 0,
+                                      title: record["title"] as? String ?? "")
                 listing.createdAt = record.creationDate
                 completion(listing)
             }
