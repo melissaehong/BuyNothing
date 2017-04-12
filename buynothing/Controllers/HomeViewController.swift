@@ -39,10 +39,17 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        Listing.listAll { (listing) in
-            guard let listing = listing else { return }
-            self.loadingIndicator.startAnimating()
-            self.allListings.append(listing)
+        loadingIndicator.startAnimating()
+
+        Listing.listAll { (listings) in
+            guard let listings = listings else { return }
+
+            if listings.isEmpty {
+                print("no results")
+                // TODO: let the user know the query returned no results
+            }
+
+            self.allListings = listings
             self.loadingIndicator.stopAnimating()
         }
     }

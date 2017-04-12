@@ -42,10 +42,15 @@ class ProfileViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        Listing.listAll { (listing) in
-            guard let listing = listing else { return }
-            self.loadingIndicator.startAnimating()
-            self.listings.append(listing)
+        loadingIndicator.startAnimating()
+
+        Listing.listAll { (listings) in
+            guard let listings = listings else { return }
+            if listings.isEmpty {
+                print("no results")
+                // TODO: query returned no results
+            }
+            self.listings = listings
             self.loadingIndicator.stopAnimating()
         }
     }

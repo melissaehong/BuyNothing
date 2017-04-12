@@ -10,6 +10,7 @@ import CloudKit
 import Foundation
 
 typealias ListingCompletion = (Listing?) -> Void
+typealias ListingsCompletion = ([Listing]?) -> Void
 
 struct Listing {
     var user: User?
@@ -35,9 +36,10 @@ struct Listing {
 
     /// Fetch all Listings available on CloudKit and yield the array of listings
     /// to the Completion handler on the main queue.
-    static func listAll(completion: @escaping ListingCompletion) {
+    static func listAll(completion: @escaping ListingsCompletion) {
         CloudKitFacade.shared.getListings { (records) in
             guard let records = records else { return }
+            var listings = [Listing]()
 
             for record in records {
                 guard let asset = record["image"] as? CKAsset,
@@ -56,8 +58,10 @@ struct Listing {
                 let activeEnum = record["is_active"] as? Int
                 listing.isActive = (activeEnum != 0)
 
-                completion(listing)
+                listings.append(listing)
             }
+
+            completion(listings)
         }
     }
 
