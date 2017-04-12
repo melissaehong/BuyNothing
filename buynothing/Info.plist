@@ -61,5 +61,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>buynothing would like to access your camera in order to post a new listing. Is that okay?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>buynothing would like to access your photos in order to post a new listing. Is that okay?</string>
 </dict>
 </plist>

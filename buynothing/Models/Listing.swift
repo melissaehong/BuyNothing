@@ -12,14 +12,14 @@ import Foundation
 typealias ListingCompletion = (Listing?) -> Void
 
 struct Listing {
-    let user: User
-    let duration: Int
-    var descriptionText: String
-    var title: String
-
+    var user: User?
+    var duration: Int?
+    var descriptionText: String?
+    var title: String?
     var latitude: Double?
     var longitude: Double?
     var createdAt: Date?
+    var image: UIImage?
 
     static var testListing: Listing {
         var listing = Listing(user: User.testUser,
@@ -49,6 +49,8 @@ struct Listing {
         }
     }
 
+    init() { }
+
     init(user: User, descriptionText: String, duration: Int, title: String) {
         self.user = user
         self.duration = duration
@@ -64,7 +66,12 @@ struct Listing {
     /// Generate a CKRecord representation of listing to allow
     /// persisting to CloudKit
     func toRecord() throws -> CKRecord? {
-        guard let createdAt = createdAt else { return nil }
+        guard let createdAt = createdAt,
+            let descriptionText = descriptionText,
+            let duration = duration,
+            let user = user
+            else { return nil }
+
         let record = CKRecord(recordType: "Listings")
         record["createdAt"] = createdAt as CKRecordValue
         record["descriptionText"] = descriptionText as CKRecordValue
