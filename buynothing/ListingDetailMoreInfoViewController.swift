@@ -35,15 +35,13 @@ class ListingDetailMoreInfoViewController: UIViewController {
         writeLocationToMap()
     }
 
-
-    
     func writeLocationToMap() {
-        
+
         guard let location = LocationManager.shared.currentLocation else { return }
-        
+
         let span = MKCoordinateSpanMake(0.02, 0.02)
         let coordinates = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        
+
         let region = MKCoordinateRegionMake(coordinates, span)
         let circle = MKCircle(center: coordinates, radius: 1_000 as CLLocationDistance)
 

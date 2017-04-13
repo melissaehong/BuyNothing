@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.startAnimating()
-        
+
         searchBar.delegate = self
 
         collectionView.delegate = self

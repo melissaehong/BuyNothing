@@ -47,7 +47,7 @@ class EditListingViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: false)
 
         // build a cancel button with an "x" icon
-        let cancelButton = UIButton(frame: .init(x: 0, y: 0, width: 20, height: 20))
+        let cancelButton = UIButton(frame: .init(x: 0, y: 0, width: 25, height: 25))
         cancelButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
 
         // when this button is pressed, execute the given callback
