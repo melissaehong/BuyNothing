@@ -40,14 +40,18 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>buynothing would like to access your camera in order to post a new listing. Is that okay?</string>
 	<key>NSLocationUsageDescription</key>
 	<string>buynothing would like to access your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>buynothing would like to access your location.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>buynothing would like to access your photos in order to post a new listing. Is that okay?</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -63,9 +67,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>buynothing would like to access your camera in order to post a new listing. Is that okay?</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>buynothing would like to access your photos in order to post a new listing. Is that okay?</string>
 </dict>
 </plist>
