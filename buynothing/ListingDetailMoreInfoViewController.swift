@@ -19,11 +19,9 @@ class ListingDetailMoreInfoViewController: UIViewController {
 
     var selectedListing: Listing! = Listing.testListing
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-//        LocationManager.shared.requestPermission()
 
         if (selectedListing) != nil {
             self.titleLabel.text = self.selectedListing.title
@@ -55,7 +53,7 @@ class ListingDetailMoreInfoViewController: UIViewController {
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 

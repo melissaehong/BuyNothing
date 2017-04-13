@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator.startAnimating()
+        
         searchBar.delegate = self
 
         collectionView.delegate = self
@@ -56,8 +58,6 @@ class HomeViewController: UIViewController {
     }
 
     func loadListings() {
-        loadingIndicator.startAnimating()
-
         Listing.listAll(matchingTerms: nil) { (listings) in
             guard let listings = listings else { return }
 
@@ -71,6 +71,7 @@ class HomeViewController: UIViewController {
         }
 
         stopRefresher()
+        loadingIndicator.stopAnimating()
     }
 
     // Call this to stop refresher

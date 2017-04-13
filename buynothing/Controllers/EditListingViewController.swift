@@ -17,6 +17,8 @@ class EditListingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+
         setInputFieldValues()
         setupCancelButton()
     }
@@ -55,6 +57,16 @@ class EditListingViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
     }
 
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     /// When the save button is pressed, save the values from the input fields
     /// in the view to the listing object in memory, then persist the listing 
     /// object to CloudKit.
@@ -64,13 +76,8 @@ class EditListingViewController: UIViewController {
         listing.image = listingImage.image
 
         CloudKitFacade.shared.saveListing(listing) { (record) in
-            if let record = record {
-                print("Saved listing to CloudKit")
-                debugPrint(record)
-                // TODO: prompt user
-            } else {
-                print("Could not save listing to CloudKit")
-                // TODO: prompt user
+            if record == nil {
+                // TODO: prompt user with error
             }
         }
 

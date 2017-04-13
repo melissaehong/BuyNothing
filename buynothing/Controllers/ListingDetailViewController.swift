@@ -19,7 +19,6 @@ class ListingDetailViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = listing.image
         listingTitle.text = listing.title
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {

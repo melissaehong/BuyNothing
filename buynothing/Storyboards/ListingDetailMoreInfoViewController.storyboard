@@ -22,18 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qW8-fY-dcO">
-                                <rect key="frame" x="16" y="24" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Hdj-Ve-DId"/>
-                                    <constraint firstAttribute="height" constant="20" id="dxQ-kt-tdX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Dismiss" image="close"/>
-                                <connections>
-                                    <action selector="closeButtonPressed:" destination="goA-FW-qoy" eventType="touchUpInside" id="gc8-yI-4rC"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R18-mg-1Pc">
                                 <rect key="frame" x="16" y="59" width="343" height="544"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,11 +120,9 @@
                             <constraint firstItem="9lv-Zq-Lng" firstAttribute="leading" secondItem="oUJ-G8-LBj" secondAttribute="leading" constant="16" id="29f-NJ-SaK"/>
                             <constraint firstItem="sFt-vM-Dhu" firstAttribute="leading" secondItem="oUJ-G8-LBj" secondAttribute="leadingMargin" constant="20" id="52o-WH-Yxx"/>
                             <constraint firstItem="ZIb-HH-UX9" firstAttribute="top" secondItem="Mid-JR-7GE" secondAttribute="bottom" constant="8" symbolic="YES" id="5Qy-mU-823"/>
-                            <constraint firstItem="qW8-fY-dcO" firstAttribute="leading" secondItem="R18-mg-1Pc" secondAttribute="leading" id="5sI-SY-Yut"/>
                             <constraint firstItem="P3c-Lg-4gg" firstAttribute="top" secondItem="sFt-vM-Dhu" secondAttribute="bottom" constant="41" id="FVA-CE-QYH"/>
                             <constraint firstItem="ZIb-HH-UX9" firstAttribute="leading" secondItem="QdR-S2-GUg" secondAttribute="leading" id="Frd-uf-KFm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZIb-HH-UX9" secondAttribute="trailing" constant="20" id="Ftb-hr-FzA"/>
-                            <constraint firstItem="R18-mg-1Pc" firstAttribute="top" secondItem="qW8-fY-dcO" secondAttribute="bottom" constant="15" id="GOa-VJ-M8f"/>
                             <constraint firstItem="jFd-FQ-63t" firstAttribute="top" secondItem="ZIb-HH-UX9" secondAttribute="bottom" constant="18" id="LhX-5e-2Zt"/>
                             <constraint firstItem="jFd-FQ-63t" firstAttribute="leading" secondItem="oUJ-G8-LBj" secondAttribute="leadingMargin" constant="20" id="POh-LZ-d0W"/>
                             <constraint firstItem="9lv-Zq-Lng" firstAttribute="top" secondItem="oUJ-G8-LBj" secondAttribute="top" constant="32" id="Qtm-KL-ge8"/>
@@ -190,6 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cab-Ot-qwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4226" y="253"/>
         </scene>
     </scenes>
     <resources>
