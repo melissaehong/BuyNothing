@@ -25,12 +25,14 @@ struct Listing {
 
     static var testListing: Listing {
         var listing = Listing(user: User.testUser,
-                              descriptionText: "Yo nobody in my hood got one.",
+                              descriptionText: "Yo nobody in my hood got one. It's free so get it when it's hot.",
                               duration: 7,
                               title: "Datsun Z28")
+        
         listing.createdAt = Date.fromString("2017/01/01")
-        listing.latitude = 47.606_209
-        listing.longitude = -122.332_071
+        listing.latitude = LocationManager.shared.currentLocation?.coordinate.latitude
+        listing.longitude = LocationManager.shared.currentLocation?.coordinate.longitude
+
         return listing
     }
 

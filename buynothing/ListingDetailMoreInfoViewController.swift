@@ -19,13 +19,11 @@ class ListingDetailMoreInfoViewController: UIViewController {
 
     var selectedListing: Listing! = Listing.testListing
 
-    // TEMPORARY
-    let listingLocation = CLLocationCoordinate2DMake(47.606209, -122.332071)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        LocationManager.shared.requestPermission()
+//        LocationManager.shared.requestPermission()
 
         if (selectedListing) != nil {
             self.titleLabel.text = self.selectedListing.title
@@ -33,19 +31,23 @@ class ListingDetailMoreInfoViewController: UIViewController {
             self.categoryLabel.text = "No Category Selected"
             self.locationLabel.text = "Location"
         }
-
-        // TEMPORARY
-//        selectedListing = Listing.testListing
     }
 
     override func viewDidAppear(_ animated: Bool) {
         writeLocationToMap()
     }
 
+
+    
     func writeLocationToMap() {
+        
+        guard let location = LocationManager.shared.currentLocation else { return }
+        
         let span = MKCoordinateSpanMake(0.02, 0.02)
-        let region = MKCoordinateRegionMake(listingLocation, span)
-        let circle = MKCircle(center: listingLocation, radius: 1_000 as CLLocationDistance)
+        let coordinates = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        
+        let region = MKCoordinateRegionMake(coordinates, span)
+        let circle = MKCircle(center: coordinates, radius: 1_000 as CLLocationDistance)
 
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true

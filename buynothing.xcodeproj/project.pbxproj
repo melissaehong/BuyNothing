@@ -15,6 +15,7 @@
 		1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */; };
 		1B33E41B1E9D54EC0054B4CE /* GalleryViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E41A1E9D54EC0054B4CE /* GalleryViewLayout.swift */; };
 		1B33E41D1E9D7BB90054B4CE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E41C1E9D7BB90054B4CE /* UIImage.swift */; };
+		1B36C8471E9FEC2000117FEF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B36C8461E9FEC2000117FEF /* CloudKit.framework */; };
 		1B3A97061E9BDC3A0053866B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97051E9BDC3A0053866B /* AppDelegate.swift */; };
 		1B3A97081E9BDC3A0053866B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97071E9BDC3A0053866B /* AuthController.swift */; };
 		1B3A970B1E9BDC3A0053866B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A97091E9BDC3A0053866B /* Main.storyboard */; };
@@ -24,7 +25,6 @@
 		1B3A971E1E9BDC3A0053866B /* BuynothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A971D1E9BDC3A0053866B /* BuynothingTests.swift */; };
 		1B3A97291E9BDC3B0053866B /* BuynothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A97281E9BDC3B0053866B /* BuynothingUITests.swift */; };
 		1B920B4B1E9C397000079011 /* CloudKitFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B920B4A1E9C397000079011 /* CloudKitFacade.swift */; };
-		1B920B4F1E9C408600079011 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B920B4E1E9C408600079011 /* CloudKit.framework */; };
 		1BA3F9731E9E471F0065FF93 /* EditListingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3F9721E9E471F0065FF93 /* EditListingViewController.storyboard */; };
 		1BA3F9751E9E47840065FF93 /* ListingDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3F9741E9E47840065FF93 /* ListingDetailViewController.storyboard */; };
 		1BF46B971E9C1795007EDBA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */; };
@@ -79,6 +79,7 @@
 		1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedEdgeImageView.swift; path = Views/RoundedEdgeImageView.swift; sourceTree = "<group>"; };
 		1B33E41A1E9D54EC0054B4CE /* GalleryViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryViewLayout.swift; path = Views/GalleryViewLayout.swift; sourceTree = "<group>"; };
 		1B33E41C1E9D7BB90054B4CE /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
+		1B36C8461E9FEC2000117FEF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1B3A97021E9BDC3A0053866B /* buynothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buynothing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3A97051E9BDC3A0053866B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3A97071E9BDC3A0053866B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = Controllers/AuthController.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		1B3A972A1E9BDC3B0053866B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B920B4A1E9C397000079011 /* CloudKitFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitFacade.swift; path = Models/CloudKitFacade.swift; sourceTree = "<group>"; };
 		1B920B4D1E9C408400079011 /* buynothing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = buynothing.entitlements; sourceTree = "<group>"; };
-		1B920B4E1E9C408600079011 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1BA3F9721E9E471F0065FF93 /* EditListingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EditListingViewController.storyboard; path = Storyboards/EditListingViewController.storyboard; sourceTree = "<group>"; };
 		1BA3F9741E9E47840065FF93 /* ListingDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ListingDetailViewController.storyboard; path = Storyboards/ListingDetailViewController.storyboard; sourceTree = "<group>"; };
 		1BF46B961E9C1795007EDBA0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 				AA434AA8FD9F4C13E1C22F1C /* CoreTelephony.framework in Frameworks */,
 				DA6E6F3C0DC32DF3683A6203 /* SystemConfiguration.framework in Frameworks */,
 				FEA80EB8F01526FE3DA56725 /* QuartzCore.framework in Frameworks */,
-				1B920B4F1E9C408600079011 /* CloudKit.framework in Frameworks */,
 				A5C4F198B8934AEDB15C9CC0 /* AVFoundation.framework in Frameworks */,
+				1B36C8471E9FEC2000117FEF /* CloudKit.framework in Frameworks */,
 				DDAE599B0752F11E4637DD02 /* CoreMedia.framework in Frameworks */,
 				7CD9ACC4E77EAD078B93929F /* CoreVideo.framework in Frameworks */,
 			);
@@ -173,8 +173,8 @@
 		18138157E3D9A301C314BC0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B36C8461E9FEC2000117FEF /* CloudKit.framework */,
 				F2D8356E1E9D3D7100C139A9 /* CoreLocation.framework */,
-				1B920B4E1E9C408600079011 /* CloudKit.framework */,
 				0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */,
 				6A679FC261586A32614D98DF /* Pods_buynothingTests.framework */,
 				E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */,
@@ -805,7 +805,7 @@
 				INFOPLIST_FILE = buynothing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buynothing.buynothing;
+				PRODUCT_BUNDLE_IDENTIFIER = jkrmr.buynothing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
@@ -828,7 +828,7 @@
 				INFOPLIST_FILE = buynothing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buynothing.buynothing;
+				PRODUCT_BUNDLE_IDENTIFIER = jkrmr.buynothing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";

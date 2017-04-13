@@ -11,6 +11,7 @@ import UIKit
 class ListingDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var listingTitle: UILabel!
+    @IBOutlet weak var listingLocation: UILabel!
 
     var listing: Listing!
 
@@ -18,6 +19,7 @@ class ListingDetailViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = listing.image
         listingTitle.text = listing.title
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -11,23 +11,31 @@ import MapKit
 import CoreLocation
 
 class LocationManager: NSObject {
+    
     static let shared = LocationManager()
+    
     let manager = CLLocationManager()
-
+    
+    var currentLocation: CLLocation?
+    
     override init() {
         super.init()
+        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.distanceFilter = 1_000
+        self.requestPermission()
     }
-
+    
+    
     func requestPermission() {
         print("requestPermission")
         let authStatus = CLLocationManager.authorizationStatus()
         let authIsRestricted = authStatus == CLAuthorizationStatus.restricted
         let authIsDenied = authStatus == CLAuthorizationStatus.denied
-
-        if authIsRestricted || authIsDenied {
+        let authNotDetermined = authStatus == CLAuthorizationStatus.notDetermined
+        
+        if authIsRestricted || authIsDenied || authNotDetermined {
             print("Location authorization restricted or denied")
             manager.requestWhenInUseAuthorization()
         } else {
@@ -36,15 +44,18 @@ class LocationManager: NSObject {
             manager.requestLocation()
         }
     }
+    
 }
 
 // MARK: CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated")
-        debugPrint(locations)
+        if let location = locations.last {
+            self.currentLocation = location
+            print("<-------this is my location: \(self.currentLocation)----------->")
+        }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
