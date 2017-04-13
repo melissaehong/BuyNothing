@@ -52,8 +52,8 @@ class ListingDetailMoreInfoViewController: UIViewController {
         mapView.add(circle)
     }
 
-    @IBAction func closeButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
