@@ -24,7 +24,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.startAnimating()
-
+        hideKeyboardWhenTappedAround()
+        
         searchBar.delegate = self
 
         collectionView.delegate = self
@@ -123,9 +124,17 @@ extension HomeViewController: UISearchBarDelegate {
             self.loadingIndicator.stopAnimating()
         }
 
+        loadingIndicator.stopAnimating()
         stopRefresher()
 
         // Send the keyboard away
         searchBar.resignFirstResponder()
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            loadingIndicator.startAnimating()
+            loadListings()
+        }
     }
 }

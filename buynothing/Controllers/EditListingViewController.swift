@@ -17,8 +17,8 @@ class EditListingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboardWhenTappedAround()
 
+        hideKeyboardWhenTappedAround()
         setInputFieldValues()
         setupCancelButton()
     }
@@ -55,16 +55,6 @@ class EditListingViewController: UIViewController {
 
         // place the cancel button on the nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
-    }
-
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-
-    func dismissKeyboard() {
-        view.endEditing(true)
     }
 
     /// When the save button is pressed, save the values from the input fields

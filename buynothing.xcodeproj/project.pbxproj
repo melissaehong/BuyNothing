@@ -10,6 +10,7 @@
 		0B58C56C569980CFB7AA82D8 /* Pods_buynothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E34C40B7EC20DDBE8C0AD7F9 /* Pods_buynothingUITests.framework */; };
 		1B05078B1E9EAB8C00C2164A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B05078A1E9EAB8C00C2164A /* String.swift */; };
 		1B0CE5221E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CE5211E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard */; };
+		1B1F68181EA019D100D95502 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F68171EA019D100D95502 /* UIViewController.swift */; };
 		1B33E4161E9D31620054B4CE /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4141E9D31620054B4CE /* ListingCell.swift */; };
 		1B33E4171E9D31620054B4CE /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B33E4151E9D31620054B4CE /* ListingCell.xib */; };
 		1B33E4191E9D31BC0054B4CE /* RoundedEdgeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */; };
@@ -74,6 +75,7 @@
 		0D16A6A553DD5920475DBC3B /* Pods_buynothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buynothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B05078A1E9EAB8C00C2164A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extensions/String.swift; sourceTree = "<group>"; };
 		1B0CE5211E9E5F390043A138 /* ListingDetailMoreInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ListingDetailMoreInfoViewController.storyboard; path = Storyboards/ListingDetailMoreInfoViewController.storyboard; sourceTree = "<group>"; };
+		1B1F68171EA019D100D95502 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIViewController.swift; sourceTree = "<group>"; };
 		1B33E4141E9D31620054B4CE /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Views/ListingCell.swift; sourceTree = "<group>"; };
 		1B33E4151E9D31620054B4CE /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListingCell.xib; path = Views/ListingCell.xib; sourceTree = "<group>"; };
 		1B33E4181E9D31BC0054B4CE /* RoundedEdgeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedEdgeImageView.swift; path = Views/RoundedEdgeImageView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				1BF46B9E1E9C24B9007EDBA0 /* Date.swift */,
 				1B33E41C1E9D7BB90054B4CE /* UIImage.swift */,
 				1B05078A1E9EAB8C00C2164A /* String.swift */,
+				1B1F68171EA019D100D95502 /* UIViewController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				F21E25CA1E9C510400648D96 /* EditListingViewController.swift in Sources */,
 				1BF46B991E9C17C7007EDBA0 /* Listing.swift in Sources */,
 				1B3A970E1E9BDC3A0053866B /* buynothing.xcdatamodeld in Sources */,
+				1B1F68181EA019D100D95502 /* UIViewController.swift in Sources */,
 				1BF46B9F1E9C24B9007EDBA0 /* Date.swift in Sources */,
 				1B33E41B1E9D54EC0054B4CE /* GalleryViewLayout.swift in Sources */,
 				1B920B4B1E9C397000079011 /* CloudKitFacade.swift in Sources */,
