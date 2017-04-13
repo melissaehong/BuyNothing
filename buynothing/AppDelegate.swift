@@ -13,6 +13,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var authController : AuthController?
+    var homeViewConroller : HomeViewController?
     var storyboard: UIStoryboard? {
         return window?.rootViewController?.storyboard
     }
@@ -25,19 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-
+        
         let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
         _ = FBSDKApplicationDelegate.sharedInstance().application(app, open: url,
                                                                   sourceApplication: sourceApplication,
                                                                   annotation: "")
 
-        if sourceApplication == "com.apple.SafariViewService",
-            url.absoluteString.hasPrefix("fb") {
+            if let authController = self.authController, let homeViewController = self.homeViewConroller {
+                authController.dismissAuthController()
+                homeViewController.loadListings()
+            }
+        
             let tabBarController = storyboard?.instantiateViewController(withIdentifier: "UITabBarController")
             window?.rootViewController = tabBarController
-        }
 
-        return true
+            return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

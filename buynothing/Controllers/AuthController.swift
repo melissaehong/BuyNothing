@@ -46,4 +46,9 @@ class AuthController: UIViewController {
         facebookLoginButton.center = centerBottomQuarter
         view.addSubview(facebookLoginButton)
     }
+    
+    func dismissAuthController() {
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+    }
 }
