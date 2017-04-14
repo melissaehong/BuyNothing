@@ -76,6 +76,8 @@ struct Listing {
         self.duration = duration
         self.descriptionText = descriptionText
         self.title = title
+        self.latitude = LocationManager.shared.currentLocation?.coordinate.latitude
+        self.longitude = LocationManager.shared.currentLocation?.coordinate.longitude
     }
 
     /// Generate a CKRecord representation of listing to allow

@@ -17,7 +17,7 @@ class ListingDetailMoreInfoViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
-    var selectedListing: Listing! = Listing.testListing
+    var selectedListing: Listing!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +37,20 @@ class ListingDetailMoreInfoViewController: UIViewController {
 
     func writeLocationToMap() {
 
-        guard let location = LocationManager.shared.currentLocation else { return }
-
-        let span = MKCoordinateSpanMake(0.02, 0.02)
-        let coordinates = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-
-        let region = MKCoordinateRegionMake(coordinates, span)
-        let circle = MKCircle(center: coordinates, radius: 1_000 as CLLocationDistance)
-
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
-        mapView.add(circle)
+        if let latitude = selectedListing.latitude, let longitude = selectedListing.longitude {
+            
+            let span = MKCoordinateSpanMake(0.02, 0.02)
+            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            let region = MKCoordinateRegionMake(coordinates, span)
+            let circle = MKCircle(center: coordinates, radius: 1_000 as CLLocationDistance)
+            
+            mapView.setRegion(region, animated: true)
+            mapView.showsUserLocation = true
+            mapView.add(circle)
+        } else {
+            print("item had no location")
+        }
     }
 
     @IBAction func closeButtonPressed(_ sender: Any) {

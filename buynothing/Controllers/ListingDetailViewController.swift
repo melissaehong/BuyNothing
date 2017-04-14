@@ -26,6 +26,18 @@ class ListingDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ListingDetailMoreInfoViewController" {
+            let destination = segue.destination as? ListingDetailMoreInfoViewController
+            destination?.selectedListing = self.listing
+        }
+    }
+    
+    @IBAction func moreInfoButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ListingDetailMoreInfoViewController", sender: nil)
+        
+    }
+    
     @IBAction func closeButtonWasPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
