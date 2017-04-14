@@ -39,7 +39,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="yIq-DJ-0hj" kind="presentation" id="Aod-6v-IYH"/>
+                                    <action selector="moreInfoButtonPressed:" destination="iSk-LH-rcl" eventType="touchUpInside" id="cw7-b4-tnZ"/>
+                                    <segue destination="yIq-DJ-0hj" kind="presentation" identifier="ListingDetailMoreInfoViewController" id="Aod-6v-IYH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygX-Oe-jfE">
