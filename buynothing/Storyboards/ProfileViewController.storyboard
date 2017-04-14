@@ -37,9 +37,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mye-HQ-wIT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_1" translatesAutoresizingMaskIntoConstraints="NO" id="Wnl-db-yLE" userLabel="BannerImage">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_1" translatesAutoresizingMaskIntoConstraints="NO" id="Wnl-db-yLE" userLabel="BannerImage">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FjC-5E-pBO" userLabel="AccentImage" customClass="RoundedEdgeImageView" customModule="buynothing" customModuleProvider="target">
                                         <rect key="frame" x="10" y="68" width="107" height="107"/>
@@ -65,6 +64,10 @@
                                     <constraint firstItem="NCt-th-TYQ" firstAttribute="leading" secondItem="mye-HQ-wIT" secondAttribute="leading" constant="13" id="G9d-4G-yQG"/>
                                     <constraint firstAttribute="bottom" secondItem="FjC-5E-pBO" secondAttribute="bottom" constant="10" id="Km2-Po-xFM"/>
                                     <constraint firstAttribute="bottom" secondItem="NCt-th-TYQ" secondAttribute="bottom" constant="13" id="dcX-f7-BG4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wnl-db-yLE" secondAttribute="bottom" id="oyw-DC-eSw"/>
+                                    <constraint firstItem="Wnl-db-yLE" firstAttribute="leading" secondItem="mye-HQ-wIT" secondAttribute="leading" id="qXl-Rh-VIp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wnl-db-yLE" secondAttribute="trailing" id="sDS-kh-BlI"/>
+                                    <constraint firstItem="Wnl-db-yLE" firstAttribute="top" secondItem="mye-HQ-wIT" secondAttribute="top" id="t7I-OG-FLu"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cHp-54-jUD">
@@ -88,7 +91,7 @@
                                 </cells>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TsT-sq-alH">
-                                <rect key="frame" x="169.5" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
